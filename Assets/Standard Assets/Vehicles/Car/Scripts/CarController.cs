@@ -133,8 +133,8 @@ namespace UnityStandardAssets.Vehicles.Car
                 Quaternion quat;
                 Vector3 position;
                 m_WheelColliders[i].GetWorldPose(out position, out quat);
-                m_WheelMeshes[i].transform.position = position;
-                m_WheelMeshes[i].transform.rotation = quat;
+				m_WheelMeshes[i].transform.position = position;
+				m_WheelMeshes[i].transform.rotation = quat;
             }
 
             //clamp input values
