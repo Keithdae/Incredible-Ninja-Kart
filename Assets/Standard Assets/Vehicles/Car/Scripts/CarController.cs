@@ -311,7 +311,6 @@ namespace UnityStandardAssets.Vehicles.Car
                     for (int i = 0; i < 4; i++)
                     {
                         m_WheelColliders[i].GetGroundHit(out wheelHit);
-
                         AdjustTorque(wheelHit.forwardSlip);
                     }
                     break;
