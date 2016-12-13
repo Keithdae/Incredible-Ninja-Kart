@@ -21,6 +21,10 @@ public class HoverCarControl : MonoBehaviour
 
 	public ParticleSystem[] dustTrails = new ParticleSystem[2];
 
+	// The first two wheels are assumed to be the front wheels
+    public GameObject[] wheels;
+    float wheelAngle;
+
  	int layerMask;
 
 	void Start()
@@ -33,29 +37,29 @@ public class HoverCarControl : MonoBehaviour
 	}
 
 	// Uncomment this to see a visual indication of the raycast hit points in the editor window
-	void OnDrawGizmos()
-	{
-		RaycastHit hit;
-	    for (int i = 0; i < hoverPoints.Length; i++)
-	    {
-			var hoverPoint = hoverPoints [i];
-	      	if (Physics.Raycast(hoverPoint.transform.position, 
-	                            -Vector3.up, out hit,
-	                           	hoverHeight, 
-	                          	layerMask))
-	      	{
-	        	Gizmos.color = Color.blue;
-	        	Gizmos.DrawLine(hoverPoint.transform.position, hit.point);
-	        	Gizmos.DrawSphere(hit.point, 0.5f);
-	      	} 
-			else
-	     	{
-	        	Gizmos.color = Color.red;
-	        	Gizmos.DrawLine(hoverPoint.transform.position, 
-	                       		hoverPoint.transform.position - Vector3.up * hoverHeight);
-	      	}
-		}  
-	}
+//	void OnDrawGizmos()
+//	{
+//		RaycastHit hit;
+//	    for (int i = 0; i < hoverPoints.Length; i++)
+//	    {
+//			var hoverPoint = hoverPoints [i];
+//	      	if (Physics.Raycast(hoverPoint.transform.position, 
+//	                            -Vector3.up, out hit,
+//	                           	hoverHeight, 
+//	                          	layerMask))
+//	      	{
+//	        	Gizmos.color = Color.blue;
+//	        	Gizmos.DrawLine(hoverPoint.transform.position, hit.point);
+//	        	Gizmos.DrawSphere(hit.point, 0.5f);
+//	      	} 
+//			else
+//	     	{
+//	        	Gizmos.color = Color.red;
+//	        	Gizmos.DrawLine(hoverPoint.transform.position, 
+//	                       		hoverPoint.transform.position - Vector3.up * hoverHeight);
+//	      	}
+//		}  
+//	}
 	
   	void Update()
   	{
@@ -82,7 +86,7 @@ public class HoverCarControl : MonoBehaviour
 	    for (int i = 0; i < hoverPoints.Length; i++)
 	    {
 	   		var hoverPoint = hoverPoints [i];
-			if (Physics.Raycast(hoverPoint.transform.position, -Vector3.up, out hit,hoverHeight, layerMask))
+            if (Physics.Raycast(hoverPoint.transform.position, -transform.up, out hit,hoverHeight, layerMask))
 			{
 				body.AddForceAtPosition(Vector3.up * hoverForce* (1.0f - (hit.distance / hoverHeight)), hoverPoint.transform.position);
 				grounded = true;
@@ -99,8 +103,42 @@ public class HoverCarControl : MonoBehaviour
 					body.AddForceAtPosition(hoverPoint.transform.up * -gravityForce, hoverPoint.transform.position);
 				}
 	   		}
-		}
+   		}
 			
+		// Turn the wheels according to the turnValue
+        if (Mathf.Abs(turnValue) > 0 && Mathf.Abs(wheelAngle) <= 30)
+        {
+            wheels[0].transform.RotateAround(wheels[0].transform.position, transform.up, turnValue);
+            wheels[1].transform.RotateAround(wheels[1].transform.position, transform.up, turnValue);
+            wheelAngle += turnValue;
+        }
+        else
+        {
+            if (Mathf.Abs(wheelAngle) < 1)
+            {
+                wheels[0].transform.RotateAround(wheels[0].transform.position, transform.up, -wheelAngle);
+                wheels[1].transform.RotateAround(wheels[1].transform.position, transform.up, -wheelAngle);
+                wheelAngle = 0f;
+            }
+            else
+            {
+                if (wheelAngle > 0)
+                {
+                    wheels[0].transform.RotateAround(wheels[0].transform.position, transform.up, -1f);
+                    wheels[1].transform.RotateAround(wheels[1].transform.position, transform.up, -1f);
+                    wheelAngle--;
+                }
+                else if (wheelAngle < 0)
+                {
+                    wheels[0].transform.RotateAround(wheels[0].transform.position, transform.up, 1f);
+                    wheels[1].transform.RotateAround(wheels[1].transform.position, transform.up, 1f);
+                    wheelAngle++;
+                }
+            }
+        }
+        
+
+		// Particle handling
 		var emissionRate = 0;
 		if(grounded)
 		{
@@ -124,16 +162,16 @@ public class HoverCarControl : MonoBehaviour
 	    if (Mathf.Abs(thrust) > 0)
 	      body.AddForce(transform.forward * thrust);
 
-		Vector3 localVel = transform.InverseTransformDirection(body.velocity);
 
 		// Handle Turn forces
+		Vector3 localVel = transform.InverseTransformDirection(body.velocity);
     	if (turnValue > 0)
     	{
-			body.AddRelativeTorque( ( (Mathf.Abs(localVel.z)>0.1)? ((localVel.z>=0)?1:-1) : 0 ) * Vector3.up * turnValue * turnStrength);
+			body.AddRelativeTorque( ( (Mathf.Abs(localVel.z)>2.0)? ((localVel.z>=0)?1:-1) : 0 ) * Vector3.up * turnValue * turnStrength);
     	} 
 		else if (turnValue < 0)
     	{
-			body.AddRelativeTorque( ( (Mathf.Abs(localVel.z)>0.1)? ((localVel.z>=0)?1:-1) : 0 ) * Vector3.up * turnValue * turnStrength);
+			body.AddRelativeTorque( ( (Mathf.Abs(localVel.z)>2.0)? ((localVel.z>=0)?1:-1) : 0 ) * Vector3.up * turnValue * turnStrength);
     	}
 
 
@@ -141,6 +179,22 @@ public class HoverCarControl : MonoBehaviour
 		if(body.velocity.sqrMagnitude > (body.velocity.normalized * maxVelocity).sqrMagnitude)
 		{
 			body.velocity = body.velocity.normalized * maxVelocity;
+		}
+
+		// Spin the wheels
+		//spinWheels();
+	}
+
+    // TODO
+	private void spinWheels()
+	{
+        foreach (GameObject wheel in wheels)
+		{
+            Vector3 localVel = transform.InverseTransformDirection(body.velocity);
+            if (Mathf.Abs(localVel.z) > 0.1)
+            {
+                wheel.transform.Rotate(new Vector3(1f,0f,0f));
+            }
 		}
 	}
 }
