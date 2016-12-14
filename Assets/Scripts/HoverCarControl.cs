@@ -24,6 +24,7 @@ public class HoverCarControl : MonoBehaviour
 	// The first two wheels are assumed to be the front wheels
     public GameObject[] wheels;
     float wheelAngle;
+	float wheelTurnSpeed = 1.5f;
 
  	int layerMask;
 
@@ -108,9 +109,9 @@ public class HoverCarControl : MonoBehaviour
 		// Turn the wheels according to the turnValue
         if (Mathf.Abs(turnValue) > 0 && Mathf.Abs(wheelAngle) <= 30)
         {
-            wheels[0].transform.RotateAround(wheels[0].transform.position, transform.up, turnValue);
-            wheels[1].transform.RotateAround(wheels[1].transform.position, transform.up, turnValue);
-            wheelAngle += turnValue;
+			wheels[0].transform.RotateAround(wheels[0].transform.position, transform.up, turnValue * wheelTurnSpeed);
+			wheels[1].transform.RotateAround(wheels[1].transform.position, transform.up, turnValue * wheelTurnSpeed);
+			wheelAngle += turnValue * wheelTurnSpeed;
         }
         else
         {
@@ -124,15 +125,15 @@ public class HoverCarControl : MonoBehaviour
             {
                 if (wheelAngle > 0)
                 {
-                    wheels[0].transform.RotateAround(wheels[0].transform.position, transform.up, -1f);
-                    wheels[1].transform.RotateAround(wheels[1].transform.position, transform.up, -1f);
-                    wheelAngle--;
+					wheels[0].transform.RotateAround(wheels[0].transform.position, transform.up, -wheelTurnSpeed);
+					wheels[1].transform.RotateAround(wheels[1].transform.position, transform.up, -wheelTurnSpeed);
+					wheelAngle-=wheelTurnSpeed;
                 }
                 else if (wheelAngle < 0)
                 {
-                    wheels[0].transform.RotateAround(wheels[0].transform.position, transform.up, 1f);
-                    wheels[1].transform.RotateAround(wheels[1].transform.position, transform.up, 1f);
-                    wheelAngle++;
+					wheels[0].transform.RotateAround(wheels[0].transform.position, transform.up, wheelTurnSpeed);
+					wheels[1].transform.RotateAround(wheels[1].transform.position, transform.up, wheelTurnSpeed);
+					wheelAngle+=wheelTurnSpeed;
                 }
             }
         }
@@ -182,7 +183,7 @@ public class HoverCarControl : MonoBehaviour
 		}
 
 		// Spin the wheels
-		//spinWheels();
+		spinWheels();
 	}
 
     // TODO
@@ -193,7 +194,7 @@ public class HoverCarControl : MonoBehaviour
             Vector3 localVel = transform.InverseTransformDirection(body.velocity);
             if (Mathf.Abs(localVel.z) > 0.1)
             {
-                wheel.transform.Rotate(new Vector3(1f,0f,0f));
+				wheel.transform.Rotate(new Vector3(localVel.z / 2.5f,0f,0f));
             }
 		}
 	}
