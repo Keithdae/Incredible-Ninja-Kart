@@ -37,12 +37,12 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44692558, g: 0.49678743, b: 0.57508624, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 7
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -132,9 +132,33 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3a2835d4736763249985d70a76e1be64, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &632598148 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000010080420630, guid: 3a2835d4736763249985d70a76e1be64,
+    type: 2}
+  m_PrefabInternal: {fileID: 303410493}
 --- !u!4 &632598151 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000011259969828, guid: 3a2835d4736763249985d70a76e1be64,
+    type: 2}
+  m_PrefabInternal: {fileID: 303410493}
+--- !u!114 &632598152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 632598148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f51b61b86ccb61944ba3a6149a6c9085, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  surfaceIndex: 0
+  kartColliders:
+  - {fileID: 643371108}
+--- !u!1 &643371108 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000013708744440, guid: 3a2835d4736763249985d70a76e1be64,
     type: 2}
   m_PrefabInternal: {fileID: 303410493}
 --- !u!1 &1824092500
@@ -323,7 +347,7 @@ TerrainCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1940512362}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: ede9399ef430a56459c7581dd30b6490, type: 2}
   m_Enabled: 1
   m_TerrainData: {fileID: 15600000, guid: 8d0766f5ad7320c4da60e81b30c5d26a, type: 2}
   m_EnableTreeColliders: 1
@@ -336,7 +360,7 @@ Terrain:
   m_Enabled: 1
   serializedVersion: 3
   m_TerrainData: {fileID: 15600000, guid: 8d0766f5ad7320c4da60e81b30c5d26a, type: 2}
-  m_TreeDistance: 5000
+  m_TreeDistance: 2000
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
   m_TreeMaximumFullLODCount: 50
@@ -349,12 +373,12 @@ Terrain:
   m_DrawHeightmap: 1
   m_DrawTreesAndFoliage: 1
   m_ReflectionProbeUsage: 1
-  m_MaterialType: 0
+  m_MaterialType: 3
   m_LegacySpecular:
     serializedVersion: 2
     rgba: 4286545791
   m_LegacyShininess: 0.078125
-  m_MaterialTemplate: {fileID: 0}
+  m_MaterialTemplate: {fileID: 2100000, guid: c8779eaa2e733b34f8ec3ce4f7935c7d, type: 2}
   m_BakeLightProbesForTrees: 1
   m_ScaleInLightmap: 0.0512
   m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
