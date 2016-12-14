@@ -6,9 +6,11 @@ public class Shuriken : MonoBehaviour {
 	public float damage;
 	public float maxLifeTime;
 
+    private float currentLifeTime;
+
 	// Use this for initialization
 	void Start () {
-	
+        currentLifeTime = 0f;
 	}
 
 	private void onTriggerEnter(Collider other){
@@ -24,10 +26,19 @@ public class Shuriken : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+	    if(this.gameObject.activeSelf && currentLifeTime < maxLifeTime)
+        {
+            currentLifeTime += Time.deltaTime;
+        }
+        else if (this.gameObject.activeSelf && currentLifeTime >= maxLifeTime)
+        {
+            this.gameObject.SetActive(false);
+            currentLifeTime = 0f;
+        }
 	}
 
 	public int opponentLayer(GameObject go){
+        Debug.Log(go.layer);
 		return (go.layer == 8) ? 9 : 8;
 	}
 }
