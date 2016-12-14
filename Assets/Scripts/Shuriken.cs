@@ -13,12 +13,17 @@ public class Shuriken : MonoBehaviour {
         currentLifeTime = 0f;
 	}
 
-	private void onTriggerEnter(Collider other){
+	void OnTriggerEnter(Collider other){
 		GameObject target = other.gameObject;
 
-		// on vérifie qu'on a touché un ennemi
-		if (target.layer == opponentLayer (this.gameObject)) {
+        // on vérifie qu'on a touché un ennemi
+        if (target.layer == opponentLayer (this.gameObject)) {
 			KartHealth otherHealth = target.GetComponent<KartHealth>();
+            while(otherHealth == null)
+            {
+                target = target.transform.parent.gameObject;
+                otherHealth = target.GetComponent<KartHealth>();
+            }
 			// on a touché un ennemi
 			otherHealth.TakeDamage(damage);
 		}
@@ -37,8 +42,8 @@ public class Shuriken : MonoBehaviour {
         }
 	}
 
-	public int opponentLayer(GameObject go){
-        Debug.Log(go.layer);
-		return (go.layer == 8) ? 9 : 8;
+	public int opponentLayer(GameObject go)
+    {
+        return (go.layer == 8) ? 9 : 8;
 	}
 }

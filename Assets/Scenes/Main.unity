@@ -621,6 +621,26 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 4000013480405764, guid: ac1cadb95194fbe4981b2e09c0ed10e5, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013480405764, guid: ac1cadb95194fbe4981b2e09c0ed10e5, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013480405764, guid: ac1cadb95194fbe4981b2e09c0ed10e5, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 2.5000012
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013480405764, guid: ac1cadb95194fbe4981b2e09c0ed10e5, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 3.8340664
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013480405764, guid: ac1cadb95194fbe4981b2e09c0ed10e5, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.46999982
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac1cadb95194fbe4981b2e09c0ed10e5, type: 2}
   m_IsPrefabParent: 0
@@ -856,6 +876,26 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013480405764, guid: ac1cadb95194fbe4981b2e09c0ed10e5, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013480405764, guid: ac1cadb95194fbe4981b2e09c0ed10e5, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013480405764, guid: ac1cadb95194fbe4981b2e09c0ed10e5, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 2.5000012
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013480405764, guid: ac1cadb95194fbe4981b2e09c0ed10e5, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 2.8501403
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013480405764, guid: ac1cadb95194fbe4981b2e09c0ed10e5, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.46999985
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac1cadb95194fbe4981b2e09c0ed10e5, type: 2}
