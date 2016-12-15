@@ -35,15 +35,16 @@ public class KartHealth : MonoBehaviour {
     {
         if (transform.gameObject.tag == "Player")
         {
-            Debug.Log(damageImage);
             damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
         }
     }
 
 	public void TakeDamage(float damage){
 		currentHealth -= damage;
-
-        damageImage.color = flashColour; // flash
+        if (transform.gameObject.tag == "Player")
+        {
+            damageImage.color = flashColour; // flash
+        }
         updateHealthUI ();
 
         if (currentHealth <= 0 && !dead) {
@@ -55,7 +56,10 @@ public class KartHealth : MonoBehaviour {
 		slider.value = (currentHealth / startingHealth) * 100;
 		fillImage.color = Color.Lerp (zeroHealthColor, fullHealthColor, currentHealth / startingHealth);
 
-        healthText.text = "Health: " + slider.value + "%";
+        if (transform.gameObject.tag == "Player")
+        {
+            healthText.text = "Health: " + slider.value + "%";
+        }
 	}
 	
 	// On players death
