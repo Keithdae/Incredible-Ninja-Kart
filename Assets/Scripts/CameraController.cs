@@ -16,10 +16,10 @@ public class CameraController : MonoBehaviour {
 		RaycastHit hit;
 		var camVector = transform.position-target.position;
 		Ray ray = new Ray(target.position,camVector);
-	    if (Physics.Raycast(ray,out hit,maxDistance+0.5f))
+	    /*if (Physics.Raycast(ray,out hit,maxDistance+0.5f))
 		{
 			transform.position = hit.point + hit.normal;
-		}
+		}*/
 
 		var rot = transform.rotation.eulerAngles;
 		rot.x = Vector3.Angle(target.position - transform.position, transform.forward);
