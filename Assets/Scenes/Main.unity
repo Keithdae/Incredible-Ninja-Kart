@@ -3228,6 +3228,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 696064761}
   m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+--- !u!114 &417883666 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000012012114754, guid: 99f75e0a114fa614d90894b6decb67db,
+    type: 2}
+  m_PrefabInternal: {fileID: 1779278553}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &435180633
 GameObject:
   m_ObjectHideFlags: 0
@@ -4827,12 +4833,12 @@ Prefab:
     - target: {fileID: 224000013922629436, guid: d14f8f87aa6592b419cef25af60b7cc4,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224000013922629436, guid: d14f8f87aa6592b419cef25af60b7cc4,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d14f8f87aa6592b419cef25af60b7cc4, type: 2}
@@ -4909,6 +4915,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114000012599381582, guid: ac1cadb95194fbe4981b2e09c0ed10e5,
+        type: 2}
+      propertyPath: aimImage
+      value: 
+      objectReference: {fileID: 417883666}
+    - target: {fileID: 114000012599381582, guid: ac1cadb95194fbe4981b2e09c0ed10e5,
+        type: 2}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 536066751}
     - target: {fileID: 114000012155437710, guid: ac1cadb95194fbe4981b2e09c0ed10e5,
         type: 2}
       propertyPath: slider
@@ -4929,6 +4945,11 @@ Prefab:
       propertyPath: damageImage
       value: 
       objectReference: {fileID: 1407572818}
+    - target: {fileID: 114000012599381582, guid: ac1cadb95194fbe4981b2e09c0ed10e5,
+        type: 2}
+      propertyPath: shurikenRange
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac1cadb95194fbe4981b2e09c0ed10e5, type: 2}
   m_IsPrefabParent: 0
@@ -6023,7 +6044,10 @@ MonoBehaviour:
   shuriken: {fileID: 1000011893315888, guid: a868fb264615b804d89f19eba2c8aed4, type: 2}
   Nombre_de_Shurikens: 3
   shootingForce: 50
-  shurikenTransform: {fileID: 1317618796}
+  shurikenSpawn: {fileID: 1317618796}
+  aimImage: {fileID: 0}
+  camera: {fileID: 0}
+  shurikenRange: 0
 --- !u!114 &1106995287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8740,15 +8764,64 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1000013076554414, guid: 99f75e0a114fa614d90894b6decb67db, type: 2}
+      propertyPath: m_Name
+      value: HUDCanvas
+      objectReference: {fileID: 0}
     - target: {fileID: 224000011332811384, guid: 99f75e0a114fa614d90894b6decb67db,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224000011332811384, guid: 99f75e0a114fa614d90894b6decb67db,
         type: 2}
       propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000012021624404, guid: 99f75e0a114fa614d90894b6decb67db,
+        type: 2}
+      propertyPath: m_AnchorMin.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000012021624404, guid: 99f75e0a114fa614d90894b6decb67db,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000012021624404, guid: 99f75e0a114fa614d90894b6decb67db,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000012021624404, guid: 99f75e0a114fa614d90894b6decb67db,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000012021624404, guid: 99f75e0a114fa614d90894b6decb67db,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000012021624404, guid: 99f75e0a114fa614d90894b6decb67db,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012012114754, guid: 99f75e0a114fa614d90894b6decb67db,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0.029411793
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012012114754, guid: 99f75e0a114fa614d90894b6decb67db,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0.029411793
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012012114754, guid: 99f75e0a114fa614d90894b6decb67db,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0.029411793
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 99f75e0a114fa614d90894b6decb67db, type: 2}

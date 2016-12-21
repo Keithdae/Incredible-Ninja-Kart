@@ -6735,7 +6735,10 @@ MonoBehaviour:
   shuriken: {fileID: 1000011893315888, guid: a868fb264615b804d89f19eba2c8aed4, type: 2}
   Nombre_de_Shurikens: 3
   shootingForce: 50
-  shurikenTransform: {fileID: 4000012578256138}
+  shurikenSpawn: {fileID: 4000012578256138}
+  aimImage: {fileID: 0}
+  camera: {fileID: 0}
+  shurikenRange: 0
 --- !u!146 &146000010114786382
 WheelCollider:
   m_ObjectHideFlags: 1
