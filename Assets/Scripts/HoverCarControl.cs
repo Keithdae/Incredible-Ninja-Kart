@@ -107,7 +107,7 @@ public class HoverCarControl : MonoBehaviour
    		}
 			
 		// Turn the wheels according to the turnValue
-        if (Mathf.Abs(turnValue) > 0 && Mathf.Abs(wheelAngle) <= 30)
+        /*if (Mathf.Abs(turnValue) > 0 && Mathf.Abs(wheelAngle) <= 30)
         {
 			wheels[0].transform.RotateAround(wheels[0].transform.position, transform.up, turnValue * wheelTurnSpeed);
 			wheels[1].transform.RotateAround(wheels[1].transform.position, transform.up, turnValue * wheelTurnSpeed);
@@ -136,7 +136,7 @@ public class HoverCarControl : MonoBehaviour
 					wheelAngle+=wheelTurnSpeed;
                 }
             }
-        }
+        }*/
         
 
 		// Particle handling
