@@ -4945,11 +4945,6 @@ Prefab:
       propertyPath: damageImage
       value: 
       objectReference: {fileID: 1407572818}
-    - target: {fileID: 114000012599381582, guid: ac1cadb95194fbe4981b2e09c0ed10e5,
-        type: 2}
-      propertyPath: shurikenRange
-      value: 100
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac1cadb95194fbe4981b2e09c0ed10e5, type: 2}
   m_IsPrefabParent: 0

@@ -6738,7 +6738,7 @@ MonoBehaviour:
   shurikenSpawn: {fileID: 4000012578256138}
   aimImage: {fileID: 0}
   camera: {fileID: 0}
-  shurikenRange: 0
+  shurikenRange: 100
 --- !u!146 &146000010114786382
 WheelCollider:
   m_ObjectHideFlags: 1
