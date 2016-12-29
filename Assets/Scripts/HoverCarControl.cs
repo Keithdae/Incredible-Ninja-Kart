@@ -107,7 +107,7 @@ public class HoverCarControl : MonoBehaviour
    		}
 			
 		// Turn the wheels according to the turnValue
-        /*if (Mathf.Abs(turnValue) > 0 && Mathf.Abs(wheelAngle) <= 30)
+        if (Mathf.Abs(turnValue) > 0 && Mathf.Abs(wheelAngle) <= 30)
         {
 			wheels[0].transform.RotateAround(wheels[0].transform.position, transform.up, turnValue * wheelTurnSpeed);
 			wheels[1].transform.RotateAround(wheels[1].transform.position, transform.up, turnValue * wheelTurnSpeed);
@@ -136,7 +136,7 @@ public class HoverCarControl : MonoBehaviour
 					wheelAngle+=wheelTurnSpeed;
                 }
             }
-        }*/
+        }
         
 
 		// Particle handling
@@ -191,10 +191,13 @@ public class HoverCarControl : MonoBehaviour
 	{
         foreach (GameObject wheel in wheels)
 		{
-            Vector3 localVel = transform.InverseTransformDirection(body.velocity);
-            if (Mathf.Abs(localVel.z) > 0.1)
+            if (wheel != null)
             {
-				wheel.transform.Rotate(new Vector3(localVel.z / 2.5f,0f,0f));
+                Vector3 localVel = transform.InverseTransformDirection(body.velocity);
+                if (Mathf.Abs(localVel.z) > 0.1)
+                {
+                    wheel.transform.Rotate(new Vector3(localVel.z / 2.5f, 0f, 0f));
+                }
             }
 		}
 	}
