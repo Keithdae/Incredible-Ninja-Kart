@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class KartHealth : MonoBehaviour {
 
 	public float startingHealth = 100f;
-	[HideInInspector]
+    //[HideInInspector]
 	public float currentHealth;
 	[HideInInspector]
 	public bool dead;
@@ -19,10 +19,16 @@ public class KartHealth : MonoBehaviour {
     public float flashSpeed = 0.1f;                     
     public Color flashColour = new Color(255f, 0f, 0f, 0.1f);     
 
+    public Transform[] spawnPoints;
+    private Renderer[] rends;
+    private HoverCarControl hcv;
+
     void Start(){
 		currentHealth = startingHealth;
 		dead = false;
 		updateHealthUI ();
+        rends = GetComponentsInChildren<Renderer>();
+        hcv = GetComponent<HoverCarControl>();
 	}
 
 	// Use this for initialization
@@ -37,6 +43,11 @@ public class KartHealth : MonoBehaviour {
         {
             damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
         }
+
+        if (currentHealth <= 0 && !dead) 
+        {
+            onDeath ();
+        }
     }
 
 	public void TakeDamage(float damage){
@@ -46,10 +57,6 @@ public class KartHealth : MonoBehaviour {
             damageImage.color = flashColour; // flash
         }
         updateHealthUI ();
-
-        if (currentHealth <= 0 && !dead) {
-			onDeath ();
-		}
 	}
 
 	private void updateHealthUI(){
@@ -65,5 +72,26 @@ public class KartHealth : MonoBehaviour {
 	// On players death
 	private void onDeath () {
 		dead = true;
+        foreach (Renderer r in rends)
+        {
+            r.enabled = false;
+        }
+        hcv.enabled = false;
+        StartCoroutine("Respawn", 2f);
 	}
+
+    IEnumerator Respawn(float spawnDelay)
+    {
+        yield return new WaitForSeconds(spawnDelay);
+        Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+        transform.position = spawnPoint.position;
+        transform.rotation = spawnPoint.rotation;
+        foreach (Renderer r in rends)
+        {
+            r.enabled = true;
+        }
+        dead = false;
+        hcv.enabled = true;
+        currentHealth = startingHealth;
+    }
 }
