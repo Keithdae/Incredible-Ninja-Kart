@@ -196,7 +196,7 @@ public class HoverCarControl : MonoBehaviour
                 Vector3 localVel = transform.InverseTransformDirection(body.velocity);
                 if (Mathf.Abs(localVel.z) > 0.1)
                 {
-                    wheel.transform.Rotate(new Vector3(localVel.z / 2.5f, 0f, 0f));
+                    wheel.transform.Rotate(new Vector3(localVel.z, 0f, 0f));
                 }
             }
 		}

@@ -26,7 +26,6 @@ public class ShootingShuriken : MonoBehaviour {
         for(int i = 0; i < Nombre_de_Shurikens; i++)
         {
             munitions[i] = (GameObject)Instantiate(shuriken, shurikenSpawn.position, shurikenSpawn.rotation);
-            munitions[i].GetComponent<Transform>().localScale = new Vector3(1.5f, 1.5f, 1.5f);
             munitions[i].layer = transform.gameObject.layer;
             munitions[i].SetActive(false);
         }
