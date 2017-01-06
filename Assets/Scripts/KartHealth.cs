@@ -20,15 +20,17 @@ public class KartHealth : MonoBehaviour {
     public Color flashColour = new Color(255f, 0f, 0f, 0.1f);     
 
     public Transform[] spawnPoints;
-    private Renderer[] rends;
     private HoverCarControl hcv;
+    private Rigidbody rig;
+    private Transform[] children;
 
     void Start(){
 		currentHealth = startingHealth;
 		dead = false;
 		updateHealthUI ();
-        rends = GetComponentsInChildren<Renderer>();
         hcv = GetComponent<HoverCarControl>();
+        rig = GetComponent<Rigidbody>();
+        children = GetComponentsInChildren<Transform>();
 	}
 
 	// Use this for initialization
@@ -60,8 +62,8 @@ public class KartHealth : MonoBehaviour {
 	}
 
 	private void updateHealthUI(){
-		slider.value = (currentHealth / startingHealth) * 100;
-		fillImage.color = Color.Lerp (zeroHealthColor, fullHealthColor, currentHealth / startingHealth);
+        slider.value = (currentHealth / startingHealth) * 100;
+        fillImage.color = Color.Lerp(zeroHealthColor, fullHealthColor, currentHealth / startingHealth);
 
         if (transform.gameObject.tag == "Player")
         {
@@ -72,11 +74,16 @@ public class KartHealth : MonoBehaviour {
 	// On players death
 	private void onDeath () {
 		dead = true;
-        foreach (Renderer r in rends)
+        foreach (Transform child in children)
         {
-            r.enabled = false;
+            child.gameObject.SetActive(false);
         }
-        hcv.enabled = false;
+        gameObject.SetActive(true);
+        if (transform.gameObject.tag == "Player")
+        {
+            hcv.enabled = false;
+        }
+        rig.useGravity = false;
         StartCoroutine("Respawn", 2f);
 	}
 
@@ -86,12 +93,17 @@ public class KartHealth : MonoBehaviour {
         Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
         transform.position = spawnPoint.position;
         transform.rotation = spawnPoint.rotation;
-        foreach (Renderer r in rends)
+        foreach (Transform child in children)
         {
-            r.enabled = true;
+            child.gameObject.SetActive(true);
         }
         dead = false;
-        hcv.enabled = true;
+        if (transform.gameObject.tag == "Player")
+        {
+            hcv.enabled = true;
+        }
+        rig.useGravity = true;
         currentHealth = startingHealth;
+        updateHealthUI ();
     }
 }
