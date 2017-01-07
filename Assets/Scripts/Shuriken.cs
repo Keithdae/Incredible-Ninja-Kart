@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Shuriken : MonoBehaviour {
 	public AudioSource audio;
@@ -8,9 +9,11 @@ public class Shuriken : MonoBehaviour {
 
     private float currentLifeTime;
     private bool collided = false;
+    private Image munition_Image;
+    private Color shuriken_dispo = new Color(255f, 255f, 255f, 1f);
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         currentLifeTime = 0f;
 	}
 
@@ -28,6 +31,7 @@ public class Shuriken : MonoBehaviour {
 			// on a touché un ennemi
 			otherHealth.TakeDamage(damage);
             this.gameObject.SetActive(false);
+            this.munition_Image.color = shuriken_dispo;
 		}
         else if(!collided && target.layer != this.gameObject.layer)
         {
@@ -48,6 +52,7 @@ public class Shuriken : MonoBehaviour {
         else if (this.gameObject.activeSelf && currentLifeTime >= maxLifeTime)
         {
             this.gameObject.SetActive(false);
+            this.munition_Image.color = shuriken_dispo;
             collided = false;
             currentLifeTime = 0f;
         }
@@ -57,4 +62,9 @@ public class Shuriken : MonoBehaviour {
     {
         return (go.layer == 8) ? 9 : 8;
 	}
+
+    public void setMunitionImage(Image mI)
+    {
+        this.munition_Image = mI;
+    }
 }

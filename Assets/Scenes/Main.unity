@@ -90,6 +90,11 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!223 &286375532 stripped
+Canvas:
+  m_PrefabParentObject: {fileID: 223000010383278426, guid: 99f75e0a114fa614d90894b6decb67db,
+    type: 2}
+  m_PrefabInternal: {fileID: 1779278553}
 --- !u!114 &417883666 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114000012012114754, guid: 99f75e0a114fa614d90894b6decb67db,
@@ -315,6 +320,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 114000010109262474, guid: 9912fdb87b6baac4b8fb6d224558b157,
+        type: 2}
+      propertyPath: aimImage
+      value: 
+      objectReference: {fileID: 417883666}
+    - target: {fileID: 114000010109262474, guid: 9912fdb87b6baac4b8fb6d224558b157,
+        type: 2}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 536066751}
+    - target: {fileID: 114000010109262474, guid: 9912fdb87b6baac4b8fb6d224558b157,
+        type: 2}
+      propertyPath: HUDCanvas
+      value: 
+      objectReference: {fileID: 286375532}
     - target: {fileID: 114000011022300336, guid: 9912fdb87b6baac4b8fb6d224558b157,
         type: 2}
       propertyPath: slider
@@ -345,16 +365,6 @@ Prefab:
       propertyPath: spawnPoints.Array.data[1]
       value: 
       objectReference: {fileID: 1959763266}
-    - target: {fileID: 114000010109262474, guid: 9912fdb87b6baac4b8fb6d224558b157,
-        type: 2}
-      propertyPath: aimImage
-      value: 
-      objectReference: {fileID: 417883666}
-    - target: {fileID: 114000010109262474, guid: 9912fdb87b6baac4b8fb6d224558b157,
-        type: 2}
-      propertyPath: camera
-      value: 
-      objectReference: {fileID: 536066751}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9912fdb87b6baac4b8fb6d224558b157, type: 2}
   m_IsPrefabParent: 0
@@ -627,57 +637,12 @@ Prefab:
     - target: {fileID: 224000011332811384, guid: 99f75e0a114fa614d90894b6decb67db,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000011332811384, guid: 99f75e0a114fa614d90894b6decb67db,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224000012021624404, guid: 99f75e0a114fa614d90894b6decb67db,
-        type: 2}
-      propertyPath: m_AnchorMin.x
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224000012021624404, guid: 99f75e0a114fa614d90894b6decb67db,
-        type: 2}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224000012021624404, guid: 99f75e0a114fa614d90894b6decb67db,
-        type: 2}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224000012021624404, guid: 99f75e0a114fa614d90894b6decb67db,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224000012021624404, guid: 99f75e0a114fa614d90894b6decb67db,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224000012021624404, guid: 99f75e0a114fa614d90894b6decb67db,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012012114754, guid: 99f75e0a114fa614d90894b6decb67db,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 0.029411793
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012012114754, guid: 99f75e0a114fa614d90894b6decb67db,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 0.029411793
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012012114754, guid: 99f75e0a114fa614d90894b6decb67db,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0.029411793
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 99f75e0a114fa614d90894b6decb67db, type: 2}

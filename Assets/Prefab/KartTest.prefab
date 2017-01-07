@@ -4183,6 +4183,9 @@ MonoBehaviour:
   aimImage: {fileID: 0}
   camera: {fileID: 0}
   shurikenRange: 500
+  HUDCanvas: {fileID: 0}
+  munition_Image: {fileID: 1000012459716806, guid: 1fe2c0a0ebfd1aa4d91dc836b832da65,
+    type: 2}
 --- !u!114 &114000010729738512
 MonoBehaviour:
   m_ObjectHideFlags: 1

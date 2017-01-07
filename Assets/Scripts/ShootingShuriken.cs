@@ -11,10 +11,15 @@ public class ShootingShuriken : MonoBehaviour {
     public Image aimImage;
     public Camera camera;
     public float shurikenRange;
+    public Canvas HUDCanvas;
+    public GameObject munition_Image;
 
     private string fireButton;
     private GameObject[] munitions;
+    private GameObject[] munition_Images;
     private int currentShuriken;
+    private Color shuriken_dispo = new Color(255f, 255f, 255f, 1f);
+    private Color shuriken_indispo = new Color(255f, 255f, 255f, .25f);
 
 	// Use this for initialization
 	void Start () {
@@ -23,11 +28,17 @@ public class ShootingShuriken : MonoBehaviour {
 
         // initialisation de shurikens
         munitions = new GameObject[Nombre_de_Shurikens];
-        for(int i = 0; i < Nombre_de_Shurikens; i++)
+        munition_Images = new GameObject[Nombre_de_Shurikens];
+        for (int i = 0; i < Nombre_de_Shurikens; i++)
         {
             munitions[i] = (GameObject)Instantiate(shuriken, shurikenSpawn.position, shurikenSpawn.rotation);
+            munition_Images[i] = (GameObject)Instantiate(munition_Image,HUDCanvas.transform);
+            munition_Images[i].GetComponent<RectTransform>().anchoredPosition = new Vector2(munition_Images[i].GetComponent<RectTransform>().anchoredPosition.x+i*23, munition_Images[i].GetComponent<RectTransform>().anchoredPosition.y);
             munitions[i].layer = transform.gameObject.layer;
             munitions[i].SetActive(false);
+            munition_Images[i].GetComponent<Image>().color = shuriken_dispo;
+            munitions[i].transform.parent = this.gameObject.transform;
+            munitions[i].GetComponent<Shuriken>().setMunitionImage(munition_Images[i].GetComponent<Image>());
         }
     }
 
@@ -65,6 +76,7 @@ public class ShootingShuriken : MonoBehaviour {
             munitions[currentShuriken].GetComponent<Transform>().position = shurikenSpawn.position;
             munitions[currentShuriken].GetComponent<Rigidbody>().velocity = shootingForce * shootDir;
             munitions[currentShuriken].SetActive(true);
+            munition_Images[currentShuriken].GetComponent<Image>().color = shuriken_indispo;
 
             currentShuriken = (currentShuriken + 1) % Nombre_de_Shurikens;
         }
