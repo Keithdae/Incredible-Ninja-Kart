@@ -17,7 +17,8 @@ public class KartHealth : MonoBehaviour {
 	public Color fullHealthColor;
     public Image damageImage; // flash image when hurt                     
     public float flashSpeed = 0.1f;                     
-    public Color flashColour = new Color(255f, 0f, 0f, 0.1f);     
+    public Color flashColour = new Color(255f, 0f, 0f, 0.1f);
+    public ParticleSystem explosion;
 
     public Transform[] spawnPoints;
     private HoverCarControl hcv;
@@ -85,6 +86,7 @@ public class KartHealth : MonoBehaviour {
         }
         rig.useGravity = false;
         StartCoroutine("Respawn", 2f);
+        explosion.Play();
 	}
 
     IEnumerator Respawn(float spawnDelay)
