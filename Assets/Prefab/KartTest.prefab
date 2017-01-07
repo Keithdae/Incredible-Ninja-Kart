@@ -1988,7 +1988,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000014149354052}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.7, z: 1.9}
+  m_LocalPosition: {x: 0, y: -0.16, z: 1.58}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_Children: []
@@ -4182,7 +4182,7 @@ MonoBehaviour:
   shurikenSpawn: {fileID: 4000013625128990}
   aimImage: {fileID: 0}
   camera: {fileID: 0}
-  shurikenRange: 100
+  shurikenRange: 500
 --- !u!114 &114000010729738512
 MonoBehaviour:
   m_ObjectHideFlags: 1

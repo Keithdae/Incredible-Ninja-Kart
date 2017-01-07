@@ -44,7 +44,13 @@ public class ShootingShuriken : MonoBehaviour {
                 RaycastHit hit;
                 if(Physics.Raycast(aimingRay, out hit, shurikenRange))
                 {
-                    Vector3 shootingDirection = hit.point - shurikenSpawn.position;
+                    Vector3 shootingDirection = (hit.point - shurikenSpawn.position).normalized;
+                    Fire(shootingDirection);
+                }
+                else
+                {
+                    Vector3 point = aimingRay.origin + (aimingRay.direction.normalized * shurikenRange);
+                    Vector3 shootingDirection = (point - shurikenSpawn.position).normalized;
                     Fire(shootingDirection);
                 }
             }
