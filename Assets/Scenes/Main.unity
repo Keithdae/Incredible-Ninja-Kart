@@ -12415,16 +12415,12 @@ Prefab:
       propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 114000012551813686, guid: e72775e24e502ca4891df0fb1a0a095f,
         type: 2}
       propertyPath: spawnPoints.Array.data[0]
       value: 
       objectReference: {fileID: 1314262653}
     - target: {fileID: 224000011432388538, guid: e72775e24e502ca4891df0fb1a0a095f,
-=======
-    - target: {fileID: 224000010655344410, guid: 99f75e0a114fa614d90894b6decb67db,
->>>>>>> 0d11edd397183d15884b74348a4b00973601b181
         type: 2}
       propertyPath: m_AnchorMax.x
       value: 0
