@@ -383,6 +383,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114000012551813686, guid: e72775e24e502ca4891df0fb1a0a095f,
+        type: 2}
+      propertyPath: spawnPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1314262653}
     - target: {fileID: 224000011432388538, guid: e72775e24e502ca4891df0fb1a0a095f,
         type: 2}
       propertyPath: m_AnchorMax.x

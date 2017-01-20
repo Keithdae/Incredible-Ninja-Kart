@@ -30,18 +30,25 @@ public class Shuriken : MonoBehaviour {
             }
 			// on a touché un ennemi
 			otherHealth.TakeDamage(damage);
-            this.gameObject.SetActive(false);
-            this.munition_Image.color = shuriken_dispo;
+            this.gameObject.GetComponentInChildren<Renderer>().enabled = false;
+            arreterShuriken();
+            collided = true;
+            //this.munition_Image.color = shuriken_dispo;
 		}
         else if(!collided && target.layer != this.gameObject.layer)
         {
-            Rigidbody rb = this.GetComponent<Rigidbody>();
-            Vector3 temp = rb.velocity;
-            rb.velocity = new Vector3(0f,0f,0f);
-            this.transform.position -= temp.normalized * 3;
+            arreterShuriken();
             collided = true;
         }
 	}
+
+    void arreterShuriken()
+    {
+        Rigidbody rb = this.GetComponent<Rigidbody>();
+        Vector3 temp = rb.velocity;
+        rb.velocity = new Vector3(0f, 0f, 0f);
+        this.transform.position -= temp.normalized * 3;
+    }
 	
 	// Update is called once per frame
 	void Update () {

@@ -19,11 +19,13 @@ public class KartHealth : MonoBehaviour {
     public float flashSpeed = 0.1f;                     
     public Color flashColour = new Color(255f, 0f, 0f, 0.1f);
     public ParticleSystem explosion;
+    public float spawnDelay = 2f;
 
     public Transform[] spawnPoints;
     private HoverCarControl hcv;
     private Rigidbody rig;
-    private Transform[] children;
+    private Renderer[] children;
+    private Canvas childCanvas;
 
     void Start(){
 		currentHealth = startingHealth;
@@ -31,7 +33,11 @@ public class KartHealth : MonoBehaviour {
 		updateHealthUI ();
         hcv = GetComponent<HoverCarControl>();
         rig = GetComponent<Rigidbody>();
-        children = GetComponentsInChildren<Transform>();
+        children = GetComponentsInChildren<Renderer>();
+        if (gameObject.tag.Equals("IA"))
+        {
+            childCanvas = GetComponentInChildren<Canvas>();
+        }
 	}
 
 	// Use this for initialization
@@ -75,29 +81,42 @@ public class KartHealth : MonoBehaviour {
 	// On players death
 	private void onDeath () {
 		dead = true;
-        foreach (Transform child in children)
+        
+        explosion.Play();
+
+        StartCoroutine("Respawn");
+	}
+
+    IEnumerator Respawn()
+    {
+        //yield return new WaitForSeconds(explosionDuration);
+        foreach (Renderer child in children)
         {
-            child.gameObject.SetActive(false);
+            if (!child.name.Equals("explosion"))
+            {
+                child.enabled = false;
+            }
         }
-        gameObject.SetActive(true);
+        if (gameObject.tag.Equals("IA"))
+        {
+            childCanvas.enabled = false;
+        }        
         if (transform.gameObject.tag == "Player")
         {
             hcv.enabled = false;
         }
         rig.useGravity = false;
-        StartCoroutine("Respawn", 2f);
-        explosion.Play();
-	}
-
-    IEnumerator Respawn(float spawnDelay)
-    {
         yield return new WaitForSeconds(spawnDelay);
         Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
         transform.position = spawnPoint.position;
         transform.rotation = spawnPoint.rotation;
-        foreach (Transform child in children)
+        foreach (Renderer child in children)
         {
-            child.gameObject.SetActive(true);
+            child.enabled = true;
+        }
+        if (gameObject.tag.Equals("IA"))
+        {
+            childCanvas.enabled = true;
         }
         dead = false;
         if (transform.gameObject.tag == "Player")
