@@ -1,23 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HoverCarControl : MonoBehaviour
+public class HoverCarSystem : MonoBehaviour
 {
   	Rigidbody body;
   	float deadZone = 0.1f;
 	public float groundedDrag = 3f;
-	public float maxVelocity = 50;
   	public float hoverForce = 1000;
 	public float gravityForce = 1000f;
   	public float hoverHeight = 1.5f;
   	public GameObject[] hoverPoints;
-
-  	public float forwardAcceleration = 8000f;
-  	public float reverseAcceleration = 4000f;
-  	float thrust = 0f;
-
- 	public float turnStrength = 1000f;
-  	float turnValue = 0f;
 
 	public ParticleSystem[] dustTrails = new ParticleSystem[2];
 
@@ -64,19 +56,7 @@ public class HoverCarControl : MonoBehaviour
 	
   	void Update()
   	{
-		// Get thrust input
-		thrust = 0.0f;
-		float acceleration = Input.GetAxis("Vertical");
-		if (acceleration > deadZone)
-      		thrust = acceleration * forwardAcceleration;
-   	 	else if (acceleration < -deadZone)
-      		thrust = acceleration * reverseAcceleration;
-
-   	 	// Get turning input
-		turnValue = 0.0f;
-    	float turnAxis = Input.GetAxis("Horizontal");
-    	if (Mathf.Abs(turnAxis) > deadZone)
-      		turnValue = turnAxis;
+		
   	}
 
   	void FixedUpdate()
@@ -105,39 +85,6 @@ public class HoverCarControl : MonoBehaviour
 				}
 	   		}
    		}
-			
-		// Turn the wheels according to the turnValue
-        if (Mathf.Abs(turnValue) > 0 && Mathf.Abs(wheelAngle) <= 30)
-        {
-			wheels[0].transform.RotateAround(wheels[0].transform.position, transform.up, turnValue * wheelTurnSpeed);
-			wheels[1].transform.RotateAround(wheels[1].transform.position, transform.up, turnValue * wheelTurnSpeed);
-			wheelAngle += turnValue * wheelTurnSpeed;
-        }
-        else
-        {
-            if (Mathf.Abs(wheelAngle) < 1)
-            {
-                wheels[0].transform.RotateAround(wheels[0].transform.position, transform.up, -wheelAngle);
-                wheels[1].transform.RotateAround(wheels[1].transform.position, transform.up, -wheelAngle);
-                wheelAngle = 0f;
-            }
-            else
-            {
-                if (wheelAngle > 0)
-                {
-					wheels[0].transform.RotateAround(wheels[0].transform.position, transform.up, -wheelTurnSpeed);
-					wheels[1].transform.RotateAround(wheels[1].transform.position, transform.up, -wheelTurnSpeed);
-					wheelAngle-=wheelTurnSpeed;
-                }
-                else if (wheelAngle < 0)
-                {
-					wheels[0].transform.RotateAround(wheels[0].transform.position, transform.up, wheelTurnSpeed);
-					wheels[1].transform.RotateAround(wheels[1].transform.position, transform.up, wheelTurnSpeed);
-					wheelAngle+=wheelTurnSpeed;
-                }
-            }
-        }
-        
 
 		// Particle handling
 		var emissionRate = 0;
@@ -149,36 +96,12 @@ public class HoverCarControl : MonoBehaviour
 		else
 		{
 			body.drag = 0.1f;
-			thrust /= 100f;
-			//turnValue /= 100f;
 		}
 
 		for(int i = 0; i<dustTrails.Length; i++)
 		{
 			var emission = dustTrails[i].emission;
 			emission.rate = new ParticleSystem.MinMaxCurve(emissionRate);
-		}
-
-	    // Handle Forward and Reverse forces
-	    if (Mathf.Abs(thrust) > 0)
-	      body.AddForce(transform.forward * thrust);
-
-
-		// Handle Turn forces
-		Vector3 localVel = transform.InverseTransformDirection(body.velocity);
-        if (grounded)
-        {
-            body.AddRelativeTorque(((Mathf.Abs(localVel.z) > 2.0) ? ((localVel.z >= 0) ? 1 : -1) : 0.1f) * Vector3.up * turnValue * turnStrength);
-        }
-        else
-        {
-            body.AddRelativeTorque(Vector3.up * turnValue * turnStrength);
-        }
-
-		// Limit max velocity
-		if(body.velocity.sqrMagnitude > (body.velocity.normalized * maxVelocity).sqrMagnitude)
-		{
-			body.velocity = body.velocity.normalized * maxVelocity;
 		}
 
 		// Spin the wheels
