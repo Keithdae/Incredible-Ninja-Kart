@@ -8,7 +8,6 @@ public class Shuriken : MonoBehaviour {
 
     private float currentLifeTime;
     private bool collided = false;
-    private bool exploded = false;
     private Image munition_Image;
     private Color shuriken_dispo = new Color(255f, 255f, 255f, 1f);
     private Rigidbody rb;

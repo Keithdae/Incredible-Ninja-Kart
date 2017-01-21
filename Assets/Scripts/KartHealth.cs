@@ -55,6 +55,7 @@ public class KartHealth : MonoBehaviour {
     public void arreterKart()
     {
         rig.velocity = new Vector3(0f, 0f, 0f);
+        rig.angularVelocity = new Vector3(0f, 0f, 0f);
     } 
 
     public float getHealth()
