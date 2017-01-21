@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class WalkBehaviour : MonoBehaviour {
+public class NavInfo : MonoBehaviour {
 
     public Transform dest;
-
-    private NavMeshAgent navAgent;
+    public NavMeshAgent navAgent;
 
 	// Use this for initialization
 	void Start () {
@@ -14,6 +13,6 @@ public class WalkBehaviour : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        navAgent.SetDestination(dest.position);
+	
 	}
 }

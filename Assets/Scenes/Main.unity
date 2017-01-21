@@ -101,6 +101,7 @@ GameObject:
   - 33: {fileID: 5526504}
   - 23: {fileID: 5526503}
   - 64: {fileID: 5526502}
+  - 208: {fileID: 5526505}
   m_Layer: 0
   m_Name: WarhouseLarge.002
   m_TagString: Untagged
@@ -181,6 +182,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 5526500}
   m_Mesh: {fileID: 4300024, guid: 72ea713322f1cae45ae527b4778aab78, type: 3}
+--- !u!208 &5526505
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 5526500}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.37, y: 0.16, z: 0.09200001}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -1.5300001, y: 0.83000004, z: 0.09200001}
+  m_TimeToStationary: 0.5
 --- !u!1 &51998820
 GameObject:
   m_ObjectHideFlags: 0
@@ -3217,6 +3233,7 @@ GameObject:
   - 33: {fileID: 539979185}
   - 23: {fileID: 539979184}
   - 64: {fileID: 539979183}
+  - 208: {fileID: 539979186}
   m_Layer: 0
   m_Name: WarhouseSmall
   m_TagString: Untagged
@@ -3294,6 +3311,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 539979181}
   m_Mesh: {fileID: 4300118, guid: 72ea713322f1cae45ae527b4778aab78, type: 3}
+--- !u!208 &539979186
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 539979181}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.12, y: 0.08, z: 0.037}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 1.2800001, y: -1.58, z: 0.037}
+  m_TimeToStationary: 0.5
 --- !u!1 &553949535
 GameObject:
   m_ObjectHideFlags: 0
@@ -3364,6 +3396,29 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 553949535}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!1 &559196748 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000010080420630, guid: e72775e24e502ca4891df0fb1a0a095f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1997095115}
+--- !u!195 &559196750 stripped
+NavMeshAgent:
+  m_PrefabParentObject: {fileID: 195000014288239166, guid: e72775e24e502ca4891df0fb1a0a095f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1997095115}
+--- !u!114 &559196754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 559196748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6903259817ef8c4ea0aaf6267f56f6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dest: {fileID: 709023893}
+  navAgent: {fileID: 559196750}
 --- !u!1 &572349323
 GameObject:
   m_ObjectHideFlags: 0
@@ -6051,6 +6106,7 @@ GameObject:
   - 33: {fileID: 1011862038}
   - 23: {fileID: 1011862037}
   - 64: {fileID: 1011862036}
+  - 208: {fileID: 1011862039}
   m_Layer: 0
   m_Name: WarhouseLarge
   m_TagString: Untagged
@@ -6131,6 +6187,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1011862034}
   m_Mesh: {fileID: 4300108, guid: 72ea713322f1cae45ae527b4778aab78, type: 3}
+--- !u!208 &1011862039
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1011862034}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.37, y: 0.16, z: 0.09200001}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 2.3600001, y: 0.83000004, z: 0.09200001}
+  m_TimeToStationary: 0.5
 --- !u!1 &1019896228
 GameObject:
   m_ObjectHideFlags: 0
@@ -7566,6 +7637,7 @@ GameObject:
   - 33: {fileID: 1198744477}
   - 23: {fileID: 1198744476}
   - 64: {fileID: 1198744475}
+  - 208: {fileID: 1198744478}
   m_Layer: 0
   m_Name: WarhouseMedium
   m_TagString: Untagged
@@ -7644,6 +7716,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1198744473}
   m_Mesh: {fileID: 4300116, guid: 72ea713322f1cae45ae527b4778aab78, type: 3}
+--- !u!208 &1198744478
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1198744473}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.17, y: 0.1, z: 0.060000002}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.26000002, y: 0.45000002, z: 0.060000002}
+  m_TimeToStationary: 0.5
 --- !u!1 &1213146325
 GameObject:
   m_ObjectHideFlags: 0
@@ -9478,6 +9565,7 @@ GameObject:
   - 33: {fileID: 1407352911}
   - 23: {fileID: 1407352910}
   - 64: {fileID: 1407352909}
+  - 208: {fileID: 1407352912}
   m_Layer: 0
   m_Name: WarhouseSmall.001
   m_TagString: Untagged
@@ -9555,6 +9643,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1407352907}
   m_Mesh: {fileID: 4300018, guid: 72ea713322f1cae45ae527b4778aab78, type: 3}
+--- !u!208 &1407352912
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1407352907}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.12, y: 0.08, z: 0.037}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 1.0400001, y: 1.9300001, z: 0.037}
+  m_TimeToStationary: 0.5
 --- !u!114 &1407572818 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114000013840118770, guid: 99f75e0a114fa614d90894b6decb67db,
@@ -9674,6 +9777,7 @@ GameObject:
   - 33: {fileID: 1445927534}
   - 23: {fileID: 1445927533}
   - 64: {fileID: 1445927532}
+  - 208: {fileID: 1445927535}
   m_Layer: 0
   m_Name: WarhouseSmall.002
   m_TagString: Untagged
@@ -9751,6 +9855,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1445927530}
   m_Mesh: {fileID: 4300016, guid: 72ea713322f1cae45ae527b4778aab78, type: 3}
+--- !u!208 &1445927535
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1445927530}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.12, y: 0.08, z: 0.037}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 1.0400001, y: 1.71, z: 0.037}
+  m_TimeToStationary: 0.5
 --- !u!1 &1449575441
 GameObject:
   m_ObjectHideFlags: 0
@@ -10280,6 +10399,7 @@ GameObject:
   - 33: {fileID: 1531774026}
   - 23: {fileID: 1531774025}
   - 64: {fileID: 1531774024}
+  - 208: {fileID: 1531774027}
   m_Layer: 0
   m_Name: WarhouseLarge.001
   m_TagString: Untagged
@@ -10360,6 +10480,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1531774022}
   m_Mesh: {fileID: 4300026, guid: 72ea713322f1cae45ae527b4778aab78, type: 3}
+--- !u!208 &1531774027
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1531774022}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.37, y: 0.16, z: 0.09200001}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -1.5300001, y: 0.42000002, z: 0.09200001}
+  m_TimeToStationary: 0.5
 --- !u!1 &1536383062
 GameObject:
   m_ObjectHideFlags: 0
@@ -11734,6 +11869,7 @@ GameObject:
   - 33: {fileID: 1723199063}
   - 23: {fileID: 1723199062}
   - 64: {fileID: 1723199061}
+  - 208: {fileID: 1723199064}
   m_Layer: 0
   m_Name: WarhouseSmall.003
   m_TagString: Untagged
@@ -11811,6 +11947,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1723199059}
   m_Mesh: {fileID: 4300014, guid: 72ea713322f1cae45ae527b4778aab78, type: 3}
+--- !u!208 &1723199064
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1723199059}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.12, y: 0.08, z: 0.037}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 1.0500001, y: 0.66, z: 0.037}
+  m_TimeToStationary: 0.5
 --- !u!1 &1726480296
 GameObject:
   m_ObjectHideFlags: 0
@@ -12198,6 +12349,7 @@ GameObject:
   - 33: {fileID: 1772214417}
   - 23: {fileID: 1772214416}
   - 64: {fileID: 1772214415}
+  - 208: {fileID: 1772214418}
   m_Layer: 0
   m_Name: WarhouseMedium.001
   m_TagString: Untagged
@@ -12276,6 +12428,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1772214413}
   m_Mesh: {fileID: 4300020, guid: 72ea713322f1cae45ae527b4778aab78, type: 3}
+--- !u!208 &1772214418
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1772214413}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.17, y: 0.1, z: 0.060000002}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.26000002, y: 0.75000006, z: 0.060000002}
+  m_TimeToStationary: 0.5
 --- !u!1 &1778683034
 GameObject:
   m_ObjectHideFlags: 0
@@ -14084,12 +14251,36 @@ Prefab:
     - target: {fileID: 224000011432388538, guid: e72775e24e502ca4891df0fb1a0a095f,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224000011432388538, guid: e72775e24e502ca4891df0fb1a0a095f,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 195000014288239166, guid: e72775e24e502ca4891df0fb1a0a095f,
+        type: 2}
+      propertyPath: m_Acceleration
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 195000014288239166, guid: e72775e24e502ca4891df0fb1a0a095f,
+        type: 2}
+      propertyPath: m_AngularSpeed
+      value: 750
+      objectReference: {fileID: 0}
+    - target: {fileID: 195000014288239166, guid: e72775e24e502ca4891df0fb1a0a095f,
+        type: 2}
+      propertyPath: m_StoppingDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 65000013812548590, guid: e72775e24e502ca4891df0fb1a0a095f,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010133809110, guid: e72775e24e502ca4891df0fb1a0a095f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.09
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e72775e24e502ca4891df0fb1a0a095f, type: 2}
