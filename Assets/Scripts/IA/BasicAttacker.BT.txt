@@ -1,4 +1,16 @@
 tree("Root")
 	repeat
-		sequence
-			Explore
+		mute
+			sequence
+				checkForEnemies
+				fallback
+					tree "FollowEnemy"
+					tree "Explore"
+
+tree "FollowEnemy"
+	while hasEnemyInSight
+		FollowEnemy
+	
+	
+tree "Explore"
+	Explore
