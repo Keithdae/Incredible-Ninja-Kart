@@ -11,7 +11,7 @@ public class KartHealthPlayer : KartHealth {
 
     // Use this for initialization
     void Start () {
-	
+        base.Start();
 	}
 
     public override void TakeDamage(float damage)

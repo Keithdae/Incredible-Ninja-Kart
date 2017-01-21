@@ -5,6 +5,8 @@ using UnityEngine.UI;
 public class Shuriken : MonoBehaviour {
 	public float damage;
 	public float maxLifeTime;
+    [HideInInspector]
+    public bool player = false;
 
     private float currentLifeTime;
     private bool collided = false;
@@ -65,7 +67,10 @@ public class Shuriken : MonoBehaviour {
         else if (this.gameObject.activeSelf && currentLifeTime >= maxLifeTime)
         {
             this.gameObject.SetActive(false);
-            this.munition_Image.color = shuriken_dispo;
+            if (player)
+            {
+                this.munition_Image.color = shuriken_dispo;
+            }
             collided = false;
             currentLifeTime = 0f;
         }

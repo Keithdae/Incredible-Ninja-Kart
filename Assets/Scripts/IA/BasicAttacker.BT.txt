@@ -5,12 +5,16 @@ tree("Root")
 				sequence
 					checkForEnemies
 					fallback
-						tree "FollowEnemy"
+						tree "Attack"
 						tree "Explore"
 
-tree "FollowEnemy"
+
+
+tree "Attack"
 	while hasEnemyInSight
-		FollowEnemy
+		sequence
+			ShootEnemy
+			FollowEnemy
 	
 	
 tree "Explore"

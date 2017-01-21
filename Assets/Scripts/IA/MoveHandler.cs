@@ -9,8 +9,8 @@ public class MoveHandler : MonoBehaviour {
     public float exploRange = 20.0f;
     public float sightRange = 50.0f;
 
-    List<GameObject> enemies;
-    List<GameObject> enemiesInSight;
+    private static List<GameObject> enemies;
+    private static List<GameObject> enemiesInSight;
     private int enemyLayer;
 
     // Use this for initialization
@@ -29,7 +29,7 @@ public class MoveHandler : MonoBehaviour {
         } 
     }
 
-    // Tasks for the behaviour tree
+    // Tasks for PandaBT
     [Task]
     void Explore()
     {
@@ -98,6 +98,15 @@ public class MoveHandler : MonoBehaviour {
     private int opponentLayer()
     {
         return (gameObject.layer == 8) ? 9 : 8;
+    }
+
+
+    public List<GameObject> GetEnemies(){
+        return enemies;
+    }
+
+    public List<GameObject> GetEnemiesInSight(){
+        return enemiesInSight;
     }
 
 
