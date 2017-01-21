@@ -7650,6 +7650,11 @@ Prefab:
       propertyPath: HUDCanvas
       value: 
       objectReference: {fileID: 286375532}
+    - target: {fileID: 114000010109262474, guid: 9912fdb87b6baac4b8fb6d224558b157,
+        type: 2}
+      propertyPath: shootingForce
+      value: 130
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9912fdb87b6baac4b8fb6d224558b157, type: 2}
   m_IsPrefabParent: 0
