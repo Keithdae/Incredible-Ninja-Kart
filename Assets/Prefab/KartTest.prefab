@@ -70,8 +70,8 @@ GameObject:
   - 4: {fileID: 4000011259969828}
   - 54: {fileID: 54000010054933616}
   - 114: {fileID: 114000010729738512}
-  - 114: {fileID: 114000011022300336}
   - 114: {fileID: 114000010109262474}
+  - 114: {fileID: 114000011325341370}
   m_Layer: 8
   m_Name: KartTest
   m_TagString: Player
@@ -4170,7 +4170,7 @@ MonoBehaviour:
   shootingForce: 50
   shurikenSpawn: {fileID: 4000013625128990}
   aimImage: {fileID: 0}
-  camera: {fileID: 0}
+  cam: {fileID: 0}
   shurikenRange: 500
   HUDCanvas: {fileID: 0}
   munition_Image: {fileID: 1000012459716806, guid: 1fe2c0a0ebfd1aa4d91dc836b832da65,
@@ -4207,7 +4207,7 @@ MonoBehaviour:
   - {fileID: 1000014062766900}
   - {fileID: 1000010991948924}
   - {fileID: 1000014239139930}
---- !u!114 &114000011022300336
+--- !u!114 &114000011325341370
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -4215,7 +4215,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000010080420630}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a18d8062d0b918429859e8e4ced9e14, type: 3}
+  m_Script: {fileID: 11500000, guid: 913f3c7d3f932b149b8981a57533bdba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 100
@@ -4223,16 +4223,16 @@ MonoBehaviour:
   dead: 0
   slider: {fileID: 0}
   fillImage: {fileID: 0}
-  healthText: {fileID: 0}
   zeroHealthColor: {r: 1, g: 0, b: 0, a: 1}
-  fullHealthColor: {r: 0, g: 0.991, b: 0, a: 1}
+  fullHealthColor: {r: 0, g: 1, b: 0, a: 1}
+  cam: {fileID: 0}
+  spawnDelay: 5
+  spawnPoints:
+  - {fileID: 0}
+  healthText: {fileID: 0}
   damageImage: {fileID: 0}
   flashSpeed: 0.1
   flashColour: {r: 255, g: 0, b: 0, a: 0.1}
-  explosion: {fileID: 198000014221954442}
-  spawnPoints:
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!198 &198000010939624182
 ParticleSystem:
   m_ObjectHideFlags: 1
