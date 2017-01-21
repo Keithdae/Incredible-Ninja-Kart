@@ -1,15 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using Panda;
 
 public class KartHealthIA : KartHealth {
     private Canvas childCanvas;
+    private NavMeshAgent navAg;
 
     // Use this for initialization
     protected override void Start()
     {
         base.Start();
         childCanvas = GetComponentInChildren<Canvas>();
+        navAg = GetComponentInChildren<NavMeshAgent>();
         updateHealthUI();
     }
 	
@@ -41,6 +44,7 @@ public class KartHealthIA : KartHealth {
         Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
         transform.position = spawnPoint.position;
         transform.rotation = spawnPoint.rotation;
+        navAg.SetDestination(transform.position);
         yield return new WaitForSeconds(spawnDelay);
         setKartVisible(true);
         childCanvas.enabled = true;
@@ -48,5 +52,11 @@ public class KartHealthIA : KartHealth {
         rig.useGravity = true;
         currentHealth = startingHealth;
         updateHealthUI();
+    }
+
+    // For PandaBT
+    [Task]
+    void isAlive(){
+        Task.current.Complete(!dead);
     }
 }

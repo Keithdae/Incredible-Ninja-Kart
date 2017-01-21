@@ -74,6 +74,7 @@ public class MoveHandler : MonoBehaviour {
     {
         Task.current.Complete(enemiesInSight.Count>0);
     }
+        
     // Utility functions
     private bool RandomPoint(Vector3 center, float range, out Vector3 result) {
         for (int i = 0; i < 30; i++) {
