@@ -7532,7 +7532,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000011259969828, guid: 9912fdb87b6baac4b8fb6d224558b157, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 17.31
+      value: 9.21
       objectReference: {fileID: 0}
     - target: {fileID: 4000011259969828, guid: 9912fdb87b6baac4b8fb6d224558b157, type: 2}
       propertyPath: m_LocalPosition.y
@@ -7540,7 +7540,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000011259969828, guid: 9912fdb87b6baac4b8fb6d224558b157, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 6.75
+      value: 15.37
       objectReference: {fileID: 0}
     - target: {fileID: 4000011259969828, guid: 9912fdb87b6baac4b8fb6d224558b157, type: 2}
       propertyPath: m_LocalRotation.x
@@ -7895,6 +7895,52 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 2.4150002, y: -0.4, z: 0.105000004}
   m_TimeToStationary: 0.5
+--- !u!1 &1156746691
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1156746693}
+  - 114: {fileID: 1156746692}
+  m_Layer: 0
+  m_Name: GameManager (Deathmatch)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1156746692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1156746691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1445a2f8f067bb4b88ac7680e43b649, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startDelay: 0
+  nbPlayerPerTeam: 0
+  kartPlayerPrefab: {fileID: 0}
+  kartIAPrefab: {fileID: 0}
+  spawnPointsTeam1: []
+  spawnPointsTeam2: []
+--- !u!4 &1156746693
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1156746691}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 376, y: 135.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
 --- !u!1 &1159329246
 GameObject:
   m_ObjectHideFlags: 0
@@ -15347,6 +15393,11 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012752999392, guid: e72775e24e502ca4891df0fb1a0a095f,
+        type: 2}
+      propertyPath: sourceInfos.Array.data[0].isFoldout
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114000010088406524, guid: e72775e24e502ca4891df0fb1a0a095f, type: 2}
