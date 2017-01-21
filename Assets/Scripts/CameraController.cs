@@ -7,7 +7,6 @@ public class CameraController : MonoBehaviour {
 	[SerializeField] Transform target;
     public Image wastedImage;
     public AudioSource wastedSound;
-    public Transform deathCamPosition;
     public float spawnDelay;
 
 	private float maxDistance = 15f;
@@ -43,8 +42,6 @@ public class CameraController : MonoBehaviour {
 
     IEnumerator OnPlayersDeath()
     {
-        transform.position = deathCamPosition.position;
-        transform.rotation = deathCamPosition.rotation;
         blurComponent.enabled = true;
         grayscaleComponent.enabled = true;
         wastedImage.enabled = true;
