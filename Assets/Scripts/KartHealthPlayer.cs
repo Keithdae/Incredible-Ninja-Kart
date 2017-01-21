@@ -10,8 +10,9 @@ public class KartHealthPlayer : KartHealth {
     public Color flashColour = new Color(255f, 0f, 0f, 0.1f);
 
     // Use this for initialization
-    void Start () {
-	
+    protected override void Start () {
+        base.Start();
+        updateHealthUI();
 	}
 
     public override void TakeDamage(float damage)
