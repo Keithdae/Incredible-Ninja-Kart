@@ -206,6 +206,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 51998821}
   - 64: {fileID: 51998822}
+  - 208: {fileID: 51998823}
   m_Layer: 0
   m_Name: fence_wire_a_col
   m_TagString: Untagged
@@ -239,6 +240,21 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &51998823
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 51998820}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &66151280
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,6 +559,7 @@ GameObject:
   - 4: {fileID: 88992234}
   - 33: {fileID: 88992236}
   - 23: {fileID: 88992235}
+  - 208: {fileID: 88992237}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -603,6 +620,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 88992233}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &88992237
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 88992233}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &92634723
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,7 +727,7 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.060000002, y: 0.015000001, z: 0.015000001}
+  m_Extents: {x: 0.06, y: 0.015000001, z: 0.015000001}
   m_MoveThreshold: 0.1
   m_Carve: 0
   m_CarveOnlyStationary: 1
@@ -809,6 +841,7 @@ GameObject:
   - 4: {fileID: 119208339}
   - 33: {fileID: 119208341}
   - 23: {fileID: 119208340}
+  - 208: {fileID: 119208342}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -869,6 +902,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 119208338}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &119208342
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 119208338}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &145940066
 GameObject:
   m_ObjectHideFlags: 0
@@ -977,6 +1025,7 @@ GameObject:
   - 4: {fileID: 157620377}
   - 33: {fileID: 157620379}
   - 23: {fileID: 157620378}
+  - 208: {fileID: 157620380}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -1037,6 +1086,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 157620376}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &157620380
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 157620376}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &166981336
 GameObject:
   m_ObjectHideFlags: 0
@@ -1047,6 +1111,7 @@ GameObject:
   - 4: {fileID: 166981337}
   - 33: {fileID: 166981339}
   - 23: {fileID: 166981338}
+  - 208: {fileID: 166981340}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -1107,6 +1172,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 166981336}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &166981340
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 166981336}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &173874133
 GameObject:
   m_ObjectHideFlags: 0
@@ -1497,6 +1577,7 @@ GameObject:
   - 4: {fileID: 226284834}
   - 33: {fileID: 226284836}
   - 23: {fileID: 226284835}
+  - 208: {fileID: 226284837}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -1557,6 +1638,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 226284833}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &226284837
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 226284833}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &231488940
 GameObject:
   m_ObjectHideFlags: 0
@@ -1787,6 +1883,7 @@ GameObject:
   - 4: {fileID: 272327160}
   - 33: {fileID: 272327162}
   - 23: {fileID: 272327161}
+  - 208: {fileID: 272327163}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -1847,6 +1944,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 272327159}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &272327163
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 272327159}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &279027758
 GameObject:
   m_ObjectHideFlags: 0
@@ -1944,6 +2056,7 @@ GameObject:
   - 4: {fileID: 320871118}
   - 33: {fileID: 320871120}
   - 23: {fileID: 320871119}
+  - 208: {fileID: 320871121}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -2004,6 +2117,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 320871117}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &320871121
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 320871117}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &329408449
 GameObject:
   m_ObjectHideFlags: 0
@@ -2014,6 +2142,7 @@ GameObject:
   - 4: {fileID: 329408450}
   - 33: {fileID: 329408452}
   - 23: {fileID: 329408451}
+  - 208: {fileID: 329408453}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -2074,6 +2203,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 329408449}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &329408453
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 329408449}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &334809394
 GameObject:
   m_ObjectHideFlags: 0
@@ -2378,6 +2522,7 @@ GameObject:
   - 4: {fileID: 348873677}
   - 33: {fileID: 348873679}
   - 23: {fileID: 348873678}
+  - 208: {fileID: 348873680}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -2438,6 +2583,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 348873676}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &348873680
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 348873676}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &357813672
 GameObject:
   m_ObjectHideFlags: 0
@@ -2448,6 +2608,7 @@ GameObject:
   - 4: {fileID: 357813673}
   - 33: {fileID: 357813675}
   - 23: {fileID: 357813674}
+  - 208: {fileID: 357813676}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -2508,6 +2669,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 357813672}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &357813676
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 357813672}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &386966752
 GameObject:
   m_ObjectHideFlags: 0
@@ -2518,6 +2694,7 @@ GameObject:
   - 4: {fileID: 386966753}
   - 33: {fileID: 386966755}
   - 23: {fileID: 386966754}
+  - 208: {fileID: 386966756}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -2578,6 +2755,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 386966752}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &386966756
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 386966752}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &395179033
 GameObject:
   m_ObjectHideFlags: 0
@@ -2888,6 +3080,7 @@ GameObject:
   - 4: {fileID: 438989360}
   - 33: {fileID: 438989362}
   - 23: {fileID: 438989361}
+  - 208: {fileID: 438989363}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -2948,6 +3141,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 438989359}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &438989363
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 438989359}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &442999372
 GameObject:
   m_ObjectHideFlags: 0
@@ -3056,6 +3264,7 @@ GameObject:
   - 4: {fileID: 534333387}
   - 33: {fileID: 534333389}
   - 23: {fileID: 534333388}
+  - 208: {fileID: 534333390}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -3116,6 +3325,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 534333386}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &534333390
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 534333386}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &536066746
 GameObject:
   m_ObjectHideFlags: 0
@@ -3222,6 +3446,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 709023893}
+  wastedImage: {fileID: 0}
+  wastedSound: {fileID: 0}
+  deathCamPosition: {fileID: 0}
+  spawnDelay: 0
 --- !u!1 &539979181
 GameObject:
   m_ObjectHideFlags: 0
@@ -3336,6 +3564,7 @@ GameObject:
   - 4: {fileID: 553949536}
   - 33: {fileID: 553949538}
   - 23: {fileID: 553949537}
+  - 208: {fileID: 553949539}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -3396,17 +3625,27 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 553949535}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &553949539
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 553949535}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &559196748 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1000010080420630, guid: e72775e24e502ca4891df0fb1a0a095f,
     type: 2}
   m_PrefabInternal: {fileID: 1997095115}
---- !u!195 &559196750 stripped
-NavMeshAgent:
-  m_PrefabParentObject: {fileID: 195000014288239166, guid: e72775e24e502ca4891df0fb1a0a095f,
-    type: 2}
-  m_PrefabInternal: {fileID: 1997095115}
---- !u!114 &559196754
+--- !u!114 &559196749
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -3414,11 +3653,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 559196748}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6903259817ef8c4ea0aaf6267f56f6b, type: 3}
+  m_Script: {fileID: 11500000, guid: 17e43e7170fb45b4b81dcd16d0ff55d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dest: {fileID: 709023893}
-  navAgent: {fileID: 559196750}
+  scripts:
+  - {fileID: 4900000, guid: a3e92a2eabe3ba34696423ac29c97b63, type: 3}
+  autoReset: 1
+  tickOn: 0
+  sourceInfos:
+  - isFoldout: 1
+    breakPoints: 
+    breakPointStatuses: 
+    collapsedLines: 
+    btScript: 
+--- !u!114 &559196751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 559196748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26a9d2a7b7d10c647bf8f62b862b773d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  navAgent: {fileID: 0}
 --- !u!1 &572349323
 GameObject:
   m_ObjectHideFlags: 0
@@ -3713,6 +3972,7 @@ GameObject:
   - 4: {fileID: 609063969}
   - 33: {fileID: 609063971}
   - 23: {fileID: 609063970}
+  - 208: {fileID: 609063972}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -3773,6 +4033,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 609063968}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &609063972
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 609063968}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &631042887
 GameObject:
   m_ObjectHideFlags: 0
@@ -3881,6 +4156,7 @@ GameObject:
   - 4: {fileID: 645806120}
   - 33: {fileID: 645806122}
   - 23: {fileID: 645806121}
+  - 208: {fileID: 645806123}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -3941,6 +4217,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 645806119}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &645806123
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 645806119}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &657335374
 GameObject:
   m_ObjectHideFlags: 0
@@ -4210,6 +4501,7 @@ GameObject:
   - 4: {fileID: 704238500}
   - 33: {fileID: 704238502}
   - 23: {fileID: 704238501}
+  - 208: {fileID: 704238503}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -4270,6 +4562,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 704238499}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &704238503
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 704238499}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &705935995
 GameObject:
   m_ObjectHideFlags: 0
@@ -4280,6 +4587,7 @@ GameObject:
   - 4: {fileID: 705935996}
   - 33: {fileID: 705935998}
   - 23: {fileID: 705935997}
+  - 208: {fileID: 705935999}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -4340,6 +4648,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 705935995}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &705935999
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 705935995}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!4 &709023893 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000011259969828, guid: 9912fdb87b6baac4b8fb6d224558b157,
@@ -4453,6 +4776,7 @@ GameObject:
   - 4: {fileID: 712605853}
   - 33: {fileID: 712605855}
   - 23: {fileID: 712605854}
+  - 208: {fileID: 712605856}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -4513,6 +4837,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 712605852}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &712605856
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 712605852}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &732344997
 GameObject:
   m_ObjectHideFlags: 0
@@ -4620,6 +4959,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 747885447}
   - 64: {fileID: 747885448}
+  - 208: {fileID: 747885449}
   m_Layer: 0
   m_Name: fence_wire_a_col
   m_TagString: Untagged
@@ -4653,6 +4993,21 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &747885449
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 747885446}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &783540216
 GameObject:
   m_ObjectHideFlags: 0
@@ -4761,6 +5116,7 @@ GameObject:
   - 4: {fileID: 797900766}
   - 33: {fileID: 797900768}
   - 23: {fileID: 797900767}
+  - 208: {fileID: 797900769}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -4821,6 +5177,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 797900765}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &797900769
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 797900765}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &799097960
 GameObject:
   m_ObjectHideFlags: 0
@@ -5125,6 +5496,7 @@ GameObject:
   - 4: {fileID: 847941003}
   - 33: {fileID: 847941005}
   - 23: {fileID: 847941004}
+  - 208: {fileID: 847941006}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -5185,6 +5557,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 847941002}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &847941006
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 847941002}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &856991072
 GameObject:
   m_ObjectHideFlags: 0
@@ -5687,6 +6074,7 @@ GameObject:
   - 4: {fileID: 942344896}
   - 33: {fileID: 942344898}
   - 23: {fileID: 942344897}
+  - 208: {fileID: 942344899}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -5747,6 +6135,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 942344895}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &942344899
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 942344895}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &957756916
 GameObject:
   m_ObjectHideFlags: 0
@@ -5757,6 +6160,7 @@ GameObject:
   - 4: {fileID: 957756917}
   - 33: {fileID: 957756919}
   - 23: {fileID: 957756918}
+  - 208: {fileID: 957756920}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -5817,6 +6221,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 957756916}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &957756920
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 957756916}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &963193686
 GameObject:
   m_ObjectHideFlags: 0
@@ -6212,6 +6631,7 @@ GameObject:
   - 4: {fileID: 1019896229}
   - 33: {fileID: 1019896231}
   - 23: {fileID: 1019896230}
+  - 208: {fileID: 1019896232}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -6272,6 +6692,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1019896228}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &1019896232
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1019896228}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &1027505542
 GameObject:
   m_ObjectHideFlags: 0
@@ -6281,6 +6716,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1027505543}
   - 64: {fileID: 1027505544}
+  - 208: {fileID: 1027505545}
   m_Layer: 0
   m_Name: fence_wire_a_col
   m_TagString: Untagged
@@ -6314,6 +6750,21 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &1027505545
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1027505542}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1030871664
 GameObject:
   m_ObjectHideFlags: 0
@@ -6353,6 +6804,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1033213219}
   - 64: {fileID: 1033213220}
+  - 208: {fileID: 1033213221}
   m_Layer: 0
   m_Name: fence_wire_a_col
   m_TagString: Untagged
@@ -6386,6 +6838,21 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &1033213221
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1033213218}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1050339358
 GameObject:
   m_ObjectHideFlags: 0
@@ -6494,6 +6961,7 @@ GameObject:
   - 4: {fileID: 1052276456}
   - 33: {fileID: 1052276458}
   - 23: {fileID: 1052276457}
+  - 208: {fileID: 1052276459}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -6554,6 +7022,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1052276455}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &1052276459
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1052276455}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &1090389951
 GameObject:
   m_ObjectHideFlags: 0
@@ -6564,6 +7047,7 @@ GameObject:
   - 4: {fileID: 1090389952}
   - 33: {fileID: 1090389954}
   - 23: {fileID: 1090389953}
+  - 208: {fileID: 1090389955}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -6624,6 +7108,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1090389951}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &1090389955
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1090389951}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &1103299423
 GameObject:
   m_ObjectHideFlags: 0
@@ -6974,6 +7473,16 @@ Prefab:
       propertyPath: HUDCanvas
       value: 
       objectReference: {fileID: 286375532}
+    - target: {fileID: 114000010109262474, guid: 9912fdb87b6baac4b8fb6d224558b157,
+        type: 2}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 536066751}
+    - target: {fileID: 114000011022300336, guid: 9912fdb87b6baac4b8fb6d224558b157,
+        type: 2}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 536066746}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9912fdb87b6baac4b8fb6d224558b157, type: 2}
   m_IsPrefabParent: 0
@@ -7468,6 +7977,7 @@ GameObject:
   - 4: {fileID: 1188122013}
   - 33: {fileID: 1188122015}
   - 23: {fileID: 1188122014}
+  - 208: {fileID: 1188122016}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -7528,6 +8038,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1188122012}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &1188122016
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1188122012}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &1195143568
 GameObject:
   m_ObjectHideFlags: 0
@@ -7741,6 +8266,7 @@ GameObject:
   - 4: {fileID: 1213146326}
   - 33: {fileID: 1213146328}
   - 23: {fileID: 1213146327}
+  - 208: {fileID: 1213146329}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -7801,6 +8327,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1213146325}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &1213146329
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1213146325}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &1239219848
 GameObject:
   m_ObjectHideFlags: 0
@@ -7811,6 +8352,7 @@ GameObject:
   - 4: {fileID: 1239219849}
   - 33: {fileID: 1239219851}
   - 23: {fileID: 1239219850}
+  - 208: {fileID: 1239219852}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -7871,6 +8413,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1239219848}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &1239219852
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1239219848}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &1246362142
 GameObject:
   m_ObjectHideFlags: 0
@@ -8078,6 +8635,7 @@ GameObject:
   - 4: {fileID: 1250770792}
   - 33: {fileID: 1250770794}
   - 23: {fileID: 1250770793}
+  - 208: {fileID: 1250770795}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -8138,6 +8696,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1250770791}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &1250770795
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1250770791}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &1257220917
 GameObject:
   m_ObjectHideFlags: 0
@@ -8230,6 +8803,7 @@ GameObject:
   - 4: {fileID: 1259726047}
   - 33: {fileID: 1259726049}
   - 23: {fileID: 1259726048}
+  - 208: {fileID: 1259726050}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -8290,6 +8864,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1259726046}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &1259726050
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1259726046}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &1266878245
 GameObject:
   m_ObjectHideFlags: 0
@@ -8486,6 +9075,7 @@ GameObject:
   - 4: {fileID: 1290079521}
   - 33: {fileID: 1290079523}
   - 23: {fileID: 1290079522}
+  - 208: {fileID: 1290079524}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -8546,6 +9136,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1290079520}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &1290079524
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1290079520}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &1290403157
 GameObject:
   m_ObjectHideFlags: 0
@@ -8556,6 +9161,7 @@ GameObject:
   - 4: {fileID: 1290403158}
   - 33: {fileID: 1290403160}
   - 23: {fileID: 1290403159}
+  - 208: {fileID: 1290403161}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -8616,6 +9222,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1290403157}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &1290403161
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1290403157}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &1300533986
 GameObject:
   m_ObjectHideFlags: 0
@@ -8626,6 +9247,7 @@ GameObject:
   - 4: {fileID: 1300533987}
   - 33: {fileID: 1300533989}
   - 23: {fileID: 1300533988}
+  - 208: {fileID: 1300533990}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -8686,6 +9308,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1300533986}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &1300533990
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1300533986}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &1302816238
 GameObject:
   m_ObjectHideFlags: 0
@@ -9081,6 +9718,7 @@ GameObject:
   - 4: {fileID: 1341704819}
   - 33: {fileID: 1341704821}
   - 23: {fileID: 1341704820}
+  - 208: {fileID: 1341704822}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -9141,6 +9779,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1341704818}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &1341704822
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1341704818}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &1353117697
 GameObject:
   m_ObjectHideFlags: 0
@@ -9151,6 +9804,7 @@ GameObject:
   - 4: {fileID: 1353117698}
   - 33: {fileID: 1353117700}
   - 23: {fileID: 1353117699}
+  - 208: {fileID: 1353117701}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -9211,6 +9865,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1353117697}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &1353117701
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1353117697}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &1370771795
 GameObject:
   m_ObjectHideFlags: 0
@@ -9256,6 +9925,7 @@ GameObject:
   - 4: {fileID: 1372687579}
   - 33: {fileID: 1372687581}
   - 23: {fileID: 1372687580}
+  - 208: {fileID: 1372687582}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -9316,6 +9986,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1372687578}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &1372687582
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1372687578}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &1373176766
 GameObject:
   m_ObjectHideFlags: 0
@@ -9326,6 +10011,7 @@ GameObject:
   - 4: {fileID: 1373176767}
   - 33: {fileID: 1373176769}
   - 23: {fileID: 1373176768}
+  - 208: {fileID: 1373176770}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -9386,6 +10072,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1373176766}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &1373176770
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1373176766}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &1373340457
 GameObject:
   m_ObjectHideFlags: 0
@@ -9396,6 +10097,7 @@ GameObject:
   - 4: {fileID: 1373340458}
   - 33: {fileID: 1373340460}
   - 23: {fileID: 1373340459}
+  - 208: {fileID: 1373340461}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -9456,6 +10158,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1373340457}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &1373340461
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1373340457}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &1385460432
 GameObject:
   m_ObjectHideFlags: 0
@@ -9706,6 +10423,7 @@ GameObject:
   - 4: {fileID: 1429525382}
   - 33: {fileID: 1429525384}
   - 23: {fileID: 1429525383}
+  - 208: {fileID: 1429525385}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -9766,6 +10484,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1429525381}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &1429525385
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1429525381}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &1445927530
 GameObject:
   m_ObjectHideFlags: 0
@@ -10075,6 +10808,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1454086765}
   - 64: {fileID: 1454086766}
+  - 208: {fileID: 1454086767}
   m_Layer: 0
   m_Name: fence_wire_a_col
   m_TagString: Untagged
@@ -10108,6 +10842,21 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &1454086767
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1454086764}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1462242752
 GameObject:
   m_ObjectHideFlags: 0
@@ -10118,6 +10867,7 @@ GameObject:
   - 4: {fileID: 1462242753}
   - 33: {fileID: 1462242755}
   - 23: {fileID: 1462242754}
+  - 208: {fileID: 1462242756}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -10178,6 +10928,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1462242752}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &1462242756
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1462242752}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &1467821189
 GameObject:
   m_ObjectHideFlags: 0
@@ -10188,6 +10953,7 @@ GameObject:
   - 4: {fileID: 1467821190}
   - 33: {fileID: 1467821192}
   - 23: {fileID: 1467821191}
+  - 208: {fileID: 1467821193}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -10248,6 +11014,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1467821189}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &1467821193
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1467821189}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &1503839917
 GameObject:
   m_ObjectHideFlags: 0
@@ -10258,6 +11039,7 @@ GameObject:
   - 4: {fileID: 1503839918}
   - 33: {fileID: 1503839920}
   - 23: {fileID: 1503839919}
+  - 208: {fileID: 1503839921}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -10318,6 +11100,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1503839917}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &1503839921
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1503839917}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &1523645584
 GameObject:
   m_ObjectHideFlags: 0
@@ -10328,6 +11125,7 @@ GameObject:
   - 4: {fileID: 1523645585}
   - 33: {fileID: 1523645587}
   - 23: {fileID: 1523645586}
+  - 208: {fileID: 1523645588}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -10388,6 +11186,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1523645584}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &1523645588
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1523645584}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &1531774022
 GameObject:
   m_ObjectHideFlags: 0
@@ -10505,6 +11318,7 @@ GameObject:
   - 4: {fileID: 1536383063}
   - 33: {fileID: 1536383065}
   - 23: {fileID: 1536383064}
+  - 208: {fileID: 1536383066}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -10565,6 +11379,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1536383062}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &1536383066
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1536383062}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &1536589508
 GameObject:
   m_ObjectHideFlags: 0
@@ -10869,6 +11698,7 @@ GameObject:
   - 4: {fileID: 1553895171}
   - 33: {fileID: 1553895173}
   - 23: {fileID: 1553895172}
+  - 208: {fileID: 1553895174}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -10929,6 +11759,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1553895170}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &1553895174
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1553895170}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &1577954430
 GameObject:
   m_ObjectHideFlags: 0
@@ -10939,6 +11784,7 @@ GameObject:
   - 4: {fileID: 1577954431}
   - 33: {fileID: 1577954433}
   - 23: {fileID: 1577954432}
+  - 208: {fileID: 1577954434}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -10999,6 +11845,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1577954430}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &1577954434
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1577954430}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &1605707211
 GameObject:
   m_ObjectHideFlags: 0
@@ -11091,6 +11952,7 @@ GameObject:
   - 4: {fileID: 1605841870}
   - 33: {fileID: 1605841872}
   - 23: {fileID: 1605841871}
+  - 208: {fileID: 1605841873}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -11151,6 +12013,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1605841869}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &1605841873
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1605841869}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &1606611197
 GameObject:
   m_ObjectHideFlags: 0
@@ -13168,6 +14045,7 @@ GameObject:
   - 4: {fileID: 1855867825}
   - 33: {fileID: 1855867827}
   - 23: {fileID: 1855867826}
+  - 208: {fileID: 1855867828}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -13228,6 +14106,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1855867824}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &1855867828
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1855867824}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &1858002635
 GameObject:
   m_ObjectHideFlags: 0
@@ -13238,6 +14131,7 @@ GameObject:
   - 4: {fileID: 1858002636}
   - 33: {fileID: 1858002638}
   - 23: {fileID: 1858002637}
+  - 208: {fileID: 1858002639}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -13298,6 +14192,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1858002635}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &1858002639
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1858002635}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &1868814474
 GameObject:
   m_ObjectHideFlags: 0
@@ -13308,6 +14217,7 @@ GameObject:
   - 4: {fileID: 1868814475}
   - 33: {fileID: 1868814477}
   - 23: {fileID: 1868814476}
+  - 208: {fileID: 1868814478}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -13368,6 +14278,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1868814474}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &1868814478
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1868814474}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &1886305101
 GameObject:
   m_ObjectHideFlags: 0
@@ -13562,6 +14487,7 @@ GameObject:
   - 4: {fileID: 1926262891}
   - 33: {fileID: 1926262893}
   - 23: {fileID: 1926262892}
+  - 208: {fileID: 1926262894}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -13622,6 +14548,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1926262890}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &1926262894
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1926262890}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &1947782776
 GameObject:
   m_ObjectHideFlags: 0
@@ -14134,6 +15075,7 @@ GameObject:
   - 4: {fileID: 1995705792}
   - 33: {fileID: 1995705794}
   - 23: {fileID: 1995705793}
+  - 208: {fileID: 1995705795}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -14194,6 +15136,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1995705791}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &1995705795
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1995705791}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1001 &1997095115
 Prefab:
   m_ObjectHideFlags: 0
@@ -14282,7 +15239,13 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 0.09
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114000012551813686, guid: e72775e24e502ca4891df0fb1a0a095f,
+        type: 2}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 536066746}
+    m_RemovedComponents:
+    - {fileID: 114000010088406524, guid: e72775e24e502ca4891df0fb1a0a095f, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: e72775e24e502ca4891df0fb1a0a095f, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &2004436159
@@ -14295,6 +15258,7 @@ GameObject:
   - 4: {fileID: 2004436160}
   - 33: {fileID: 2004436162}
   - 23: {fileID: 2004436161}
+  - 208: {fileID: 2004436163}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -14355,6 +15319,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2004436159}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &2004436163
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2004436159}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &2072550075
 GameObject:
   m_ObjectHideFlags: 0
@@ -14674,6 +15653,7 @@ GameObject:
   - 4: {fileID: 2095204700}
   - 33: {fileID: 2095204702}
   - 23: {fileID: 2095204701}
+  - 208: {fileID: 2095204703}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -14734,6 +15714,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2095204699}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &2095204703
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2095204699}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
 --- !u!1 &2101139636
 GameObject:
   m_ObjectHideFlags: 0
@@ -14742,9 +15737,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2101139637}
-  - 33: {fileID: 2101139640}
-  - 23: {fileID: 2101139639}
-  - 64: {fileID: 2101139638}
   m_Layer: 0
   m_Name: Containers
   m_TagString: Untagged
@@ -14839,57 +15831,6 @@ Transform:
   - {fileID: 856991073}
   m_Father: {fileID: 245667769}
   m_RootOrder: 1
---- !u!64 &2101139638
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400002, guid: 72ea713322f1cae45ae527b4778aab78,
-    type: 3}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2101139636}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_Mesh: {fileID: 4300100, guid: 72ea713322f1cae45ae527b4778aab78, type: 3}
---- !u!23 &2101139639
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300002, guid: 72ea713322f1cae45ae527b4778aab78,
-    type: 3}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2101139636}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &2101139640
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300002, guid: 72ea713322f1cae45ae527b4778aab78,
-    type: 3}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2101139636}
-  m_Mesh: {fileID: 4300100, guid: 72ea713322f1cae45ae527b4778aab78, type: 3}
 --- !u!1 &2130532922
 GameObject:
   m_ObjectHideFlags: 0
@@ -14900,6 +15841,7 @@ GameObject:
   - 4: {fileID: 2130532923}
   - 33: {fileID: 2130532925}
   - 23: {fileID: 2130532924}
+  - 208: {fileID: 2130532926}
   m_Layer: 0
   m_Name: fence_wire_a
   m_TagString: Untagged
@@ -14960,3 +15902,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2130532922}
   m_Mesh: {fileID: 4300002, guid: 45b73f0350363416688c2094e68bcd97, type: 3}
+--- !u!208 &2130532926
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2130532922}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1, y: 2.035, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38500002, y: 2.035, z: 5}
+  m_TimeToStationary: 0.5
