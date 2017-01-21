@@ -9,7 +9,7 @@ public class ShootingShuriken : MonoBehaviour {
     public int shootingForce;
     public Transform shurikenSpawn;
     public Image aimImage;
-    public Camera camera;
+    public Camera cam;
     public float shurikenRange;
     public Canvas HUDCanvas;
     public GameObject munition_Image;
@@ -48,7 +48,7 @@ public class ShootingShuriken : MonoBehaviour {
         if (this.gameObject.tag == "Player")
         {
             aimImage.rectTransform.position = Input.mousePosition;
-            Ray aimingRay = camera.ScreenPointToRay(Input.mousePosition);
+            Ray aimingRay = cam.ScreenPointToRay(Input.mousePosition);
             Debug.DrawRay(aimingRay.origin, aimingRay.direction * 200, Color.yellow);
             if (Input.GetButtonDown(fireButton))
             {
@@ -76,6 +76,8 @@ public class ShootingShuriken : MonoBehaviour {
             munitions[currentShuriken].GetComponent<Transform>().position = shurikenSpawn.position;
             munitions[currentShuriken].GetComponent<Rigidbody>().velocity = shootingForce * shootDir;
             munitions[currentShuriken].SetActive(true);
+            munitions[currentShuriken].GetComponent<Light>().enabled = true;
+            munitions[currentShuriken].GetComponentInChildren<Renderer>().enabled = true;
             munition_Images[currentShuriken].GetComponent<Image>().color = shuriken_indispo;
 
             currentShuriken = (currentShuriken + 1) % Nombre_de_Shurikens;

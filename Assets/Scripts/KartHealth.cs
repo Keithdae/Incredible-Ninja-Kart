@@ -18,8 +18,8 @@ public class KartHealth : MonoBehaviour {
     public Image damageImage; // flash image when hurt                     
     public float flashSpeed = 0.1f;                     
     public Color flashColour = new Color(255f, 0f, 0f, 0.1f);
-    public ParticleSystem explosion;
-    public float spawnDelay = 2f;
+    public GameObject cam;
+    public float spawnDelay = 2f; //delay to respawn (in sec)
 
     public Transform[] spawnPoints;
     private HoverCarControl hcv;
@@ -52,10 +52,17 @@ public class KartHealth : MonoBehaviour {
         {
             damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
         }
-
+        if (gameObject.tag == "IA")
+        {
+            childCanvas.transform.LookAt(cam.transform);
+        }
         if (currentHealth <= 0 && !dead) 
         {
             onDeath ();
+        }
+        if(transform.position.y < -25f && !dead)
+        {
+            onDeath();
         }
     }
 
@@ -81,11 +88,21 @@ public class KartHealth : MonoBehaviour {
 	// On players death
 	private void onDeath () {
 		dead = true;
+        arreterKart();
         
-        explosion.Play();
-
+        cam.gameObject.GetComponent<CameraController>().StartCoroutine("OnPlayersDeath");
         StartCoroutine("Respawn");
 	}
+
+    public void arreterKart()
+    {
+        rig.velocity = new Vector3(0f, 0f, 0f);
+    } 
+
+    public float getHealth()
+    {
+        return slider.value;
+    }
 
     IEnumerator Respawn()
     {
@@ -106,10 +123,10 @@ public class KartHealth : MonoBehaviour {
             hcv.enabled = false;
         }
         rig.useGravity = false;
-        yield return new WaitForSeconds(spawnDelay);
         Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
         transform.position = spawnPoint.position;
         transform.rotation = spawnPoint.rotation;
+        yield return new WaitForSeconds(spawnDelay);
         foreach (Renderer child in children)
         {
             child.enabled = true;

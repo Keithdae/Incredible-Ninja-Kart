@@ -3,19 +3,25 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class Shuriken : MonoBehaviour {
-	public AudioSource audio;
 	public float damage;
 	public float maxLifeTime;
 
     private float currentLifeTime;
     private bool collided = false;
+    private bool exploded = false;
     private Image munition_Image;
     private Color shuriken_dispo = new Color(255f, 255f, 255f, 1f);
+    private Rigidbody rb;
+    private Light lumiere;
+    private Renderer mesh;
 
     // Use this for initialization
     void Start () {
         currentLifeTime = 0f;
-	}
+        rb = this.GetComponent<Rigidbody>();
+        lumiere = this.GetComponent<Light>();
+        mesh = this.GetComponentInChildren<Renderer>();
+    }
 
 	void OnTriggerEnter(Collider other){
 		GameObject target = other.gameObject;
@@ -30,13 +36,14 @@ public class Shuriken : MonoBehaviour {
             }
 			// on a touché un ennemi
 			otherHealth.TakeDamage(damage);
-            this.gameObject.GetComponentInChildren<Renderer>().enabled = false;
+            mesh.enabled = false;
+            lumiere.enabled = false;
             arreterShuriken();
             collided = true;
-            //this.munition_Image.color = shuriken_dispo;
 		}
         else if(!collided && target.layer != this.gameObject.layer)
         {
+            lumiere.enabled = false;
             arreterShuriken();
             collided = true;
         }
@@ -44,7 +51,6 @@ public class Shuriken : MonoBehaviour {
 
     void arreterShuriken()
     {
-        Rigidbody rb = this.GetComponent<Rigidbody>();
         Vector3 temp = rb.velocity;
         rb.velocity = new Vector3(0f, 0f, 0f);
         this.transform.position -= temp.normalized * 3;
