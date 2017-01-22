@@ -16,14 +16,14 @@ public class Shuriken : MonoBehaviour {
     private bool collided = false;
     private Image munition_Image;
     private Color shuriken_dispo = new Color(255f, 255f, 255f, 1f);
-    private Rigidbody rb;
+    // private Rigidbody rb;
     private Light lumiere;
     private Renderer mesh;
 
     // Use this for initialization
     void Start () {
         currentLifeTime = 0f;
-        rb = this.GetComponent<Rigidbody>();
+        // rb = this.GetComponent<Rigidbody>();
         lumiere = this.GetComponent<Light>();
         mesh = this.GetComponentInChildren<Renderer>();
     }
