@@ -29,8 +29,9 @@ public class ShootHandler : MonoBehaviour {
         {
             List<GameObject> inSight = mvHandler.GetEnemiesInSight();
             GameObject enemy = inSight[0];
+            Debug.Log("My target is "+ enemy.name + "my pos : " + transform.position + ", his pos : " + enemy.transform.position);
             Vector3 dir = enemy.transform.position - transform.position;
-            shoot.Fire(dir);
+            shoot.Fire(dir.normalized);
             shootTimer = 0f;
         }
         Task.current.Succeed();
