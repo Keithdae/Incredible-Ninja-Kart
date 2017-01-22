@@ -147,7 +147,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &65000012514409204
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -296,9 +296,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 582216bb0b3538e4eaadf5ffa5d9504b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audio: {fileID: 82000010875927386}
   damage: 30
   maxLifeTime: 3
+  player: 0
 --- !u!137 &137000012712672238
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

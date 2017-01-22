@@ -61,7 +61,7 @@ public class MoveHandler : MonoBehaviour {
             RaycastHit hit;
             if (Physics.Raycast(transform.position, dir, out hit, sightRange))
             {
-                Debug.Log("Hit this : " + hit.transform.gameObject.name);
+                //Debug.Log("Hit this : " + hit.transform.gameObject.name);
                 if(hit.transform.gameObject.layer == enemyLayer)
                     enemiesInSight.Add(hit.transform.gameObject);
             }

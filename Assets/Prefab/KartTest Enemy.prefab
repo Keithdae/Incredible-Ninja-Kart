@@ -4277,7 +4277,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 1
 --- !u!65 &65000013812548590
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -4503,6 +4503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   accuracy: 20
+  shootDelay: 0.56
 --- !u!114 &114000014222914306
 MonoBehaviour:
   m_ObjectHideFlags: 1
