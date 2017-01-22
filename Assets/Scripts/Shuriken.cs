@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public class Shuriken : MonoBehaviour {
 	public float damage;
     public float maxLifeTime;
-    [HideInInspector]
     public int speed;
     [HideInInspector]
     public bool player = false;
@@ -72,7 +71,7 @@ public class Shuriken : MonoBehaviour {
             Debug.DrawRay(transform.position, shootDir * speed, Color.red);
             if(Physics.Linecast(transform.position, nextPos, out hit)){
                 GameObject target = hit.transform.gameObject;
-                Debug.Log(hit.transform.gameObject.name);
+                //Debug.Log(hit.transform.gameObject.name);
                 // on vérifie qu'on a touché un ennemi
                 if (!collided && target.layer == opponentLayer (this.gameObject)) {
                     KartHealth otherHealth = target.GetComponent<KartHealth>();
