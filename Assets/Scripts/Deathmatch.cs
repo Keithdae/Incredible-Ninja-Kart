@@ -21,6 +21,7 @@ public class Deathmatch : MonoBehaviour
     public GameObject mainCamera;
     public GameObject startDisplay;
     public GameObject scoreDisplay;
+    public GameObject endDisplay;
 
     public KartManager[] team1;
     public KartManager[] team2;
@@ -28,6 +29,8 @@ public class Deathmatch : MonoBehaviour
     private Text scoreText;
     private Text timeText;
     private float timeleft;
+    private Text endText;
+
 
     // Use this for initialization
     void Start()
@@ -38,6 +41,8 @@ public class Deathmatch : MonoBehaviour
         timeText = aux[0];
         scoreText = aux[1];
         scoreDisplay.SetActive(false);
+        endText = endDisplay.GetComponentInChildren<Text>();
+        endDisplay.SetActive(false);
         timeleft = 60f * dureePartie;
         spawnKarts();
         mainCamera.GetComponent<CameraController>().target = team1[0].instance.transform;
@@ -102,8 +107,10 @@ public class Deathmatch : MonoBehaviour
     private IEnumerator start()
     {
         startDisplay.SetActive(true);
+        mainCamera.GetComponent<CameraController>().enableBlur(true);
         EnableAllControls(false);
         yield return new WaitForSeconds(startDelay);
+        mainCamera.GetComponent<CameraController>().enableBlur(false);
         startDisplay.SetActive(false);
     }
 
@@ -131,6 +138,26 @@ public class Deathmatch : MonoBehaviour
             }
             yield return null;
         }
+        scoreDisplay.SetActive(false);
+    }
+
+    private IEnumerator end()
+    {
+        EnableAllControls(false);
+        endDisplay.SetActive(true);
+        mainCamera.GetComponent<CameraController>().enableBlur(true);
+        int score1 = 0;
+        int score2 = 0;
+        for (int i = 0; i < team1.Length; i++)
+        {
+            score1 += team2[i].healthComponent.nbOfDeaths;
+            score2 += team1[i].healthComponent.nbOfDeaths;
+        }
+        String aux = score1 > score2 ? "You win!\n" : (score2 > score1 ? "You lose!\n" : "It's a draw!\n");
+        aux += score1.ToString() + " : " + score2.ToString();
+        endText.text = aux;
+        endText.color = score1 > score2 ? Color.green : (score2 > score1 ? Color.red : Color.yellow);
+        yield return null;
     }
 
 
@@ -138,5 +165,6 @@ public class Deathmatch : MonoBehaviour
     {
         yield return StartCoroutine(start());
         yield return StartCoroutine(deathmatch());
+        yield return StartCoroutine(end());
     }
 }

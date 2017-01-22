@@ -52,4 +52,9 @@ public class CameraController : MonoBehaviour {
         wastedImage.enabled = false;
         wastedSound.enabled = false;
     }
+
+    public void enableBlur(bool val)
+    {
+        blurComponent.enabled = val;
+    }
 }

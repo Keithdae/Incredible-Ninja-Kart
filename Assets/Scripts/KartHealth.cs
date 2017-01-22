@@ -102,7 +102,6 @@ public class KartHealth : MonoBehaviour {
             Collider[] colliders = Physics.OverlapSphere(spawnPoints[i].position, 50, 1<<opponentLayer(gameObject));
             if (colliders == null || colliders.Length == 0)
             {
-                Debug.Log("Spawn choisi: " + spawnPoints[i].name);
                 trouve = true;
                 res = i;
             }
