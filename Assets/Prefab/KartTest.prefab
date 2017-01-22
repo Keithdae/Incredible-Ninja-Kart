@@ -4196,6 +4196,9 @@ MonoBehaviour:
   - {fileID: 1000010189509508}
   - {fileID: 1000011088835112}
   - {fileID: 1000012116897498}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 4294966527
   forwardAcceleration: 8000
   reverseAcceleration: 4000
   turnStrength: 775
