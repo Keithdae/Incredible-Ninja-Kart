@@ -38,12 +38,13 @@ public class KartManager
         if (instance.tag == "IA")
         {
             pandaBehaviourIA.enabled = val;
+            instance.GetComponent<NavMeshAgent>().enabled = val;
         }
-        else if (instance.tag == "player")
+        else if (instance.tag == "Player")
         {
             playerDrivingBehaviour.enabled = val;
             playerShootingBehaviour.enabled = val;
-            playerCanvas.enabled = val;
+            //playerCanvas.enabled = val;
         }
     }
 

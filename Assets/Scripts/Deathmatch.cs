@@ -2,7 +2,8 @@
 using System.Collections;
 using System;
 
-public class Deathmatch : MonoBehaviour {
+public class Deathmatch : MonoBehaviour
+{
     public float startDelay;
     public GameObject kartPlayerPrefab;
     public GameObject kartIAPrefab;
@@ -11,20 +12,26 @@ public class Deathmatch : MonoBehaviour {
     public Canvas playerCanvas;
     public float spawnDelay;
     public GameObject mainCamera;
+    public GameObject startDisplay;
 
     public KartManager[] team1;
     public KartManager[] team2;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
+        startDisplay.GetComponent<StartCountdown>().delai = startDelay;
+        startDisplay.SetActive(false);
         spawnKarts();
         mainCamera.GetComponent<CameraController>().target = team1[0].instance.transform;
-	}
+        StartCoroutine("start");
+    }
 
     // Update is called once per frame
-    void Update () {
-	
-	}
+    void Update()
+    {
+
+    }
 
     private void spawnKarts()
     {
@@ -74,5 +81,14 @@ public class Deathmatch : MonoBehaviour {
         {
             trans.gameObject.layer = layerNumber;
         }
+    }
+
+    private IEnumerator start()
+    {
+        startDisplay.SetActive(true);
+        EnableAllControls(false);
+        yield return new WaitForSeconds(startDelay);
+        startDisplay.SetActive(false);
+        EnableAllControls(true);
     }
 }
