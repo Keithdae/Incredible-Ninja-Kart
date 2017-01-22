@@ -14,8 +14,8 @@ public class MoveHandler : MonoBehaviour {
     public List<Transform> wpAllies;
     public List<Transform> wpEnemies;
 
-    private static List<GameObject> enemies;
-    private static List<GameObject> enemiesInSight;
+    private List<GameObject> enemies;
+    private List<GameObject> enemiesInSight;
     private int enemyLayer;
 
     private int currentWP = 0;

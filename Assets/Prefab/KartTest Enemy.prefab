@@ -4303,6 +4303,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 100
   currentHealth: 0
+  nbOfDeaths: 0
   dead: 0
   slider: {fileID: 114000010414799260}
   fillImage: {fileID: 114000011432785572}

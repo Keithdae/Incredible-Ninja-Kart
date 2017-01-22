@@ -28,6 +28,7 @@ public class KartHealth : MonoBehaviour {
     [HideInInspector]
     public Rigidbody rig;
     protected Renderer[] children;
+    protected Collider[] collids;
 
     protected virtual void Start(){
 		currentHealth = startingHealth;
@@ -35,6 +36,7 @@ public class KartHealth : MonoBehaviour {
         hcv = GetComponent<HoverCarControl>();
         rig = GetComponent<Rigidbody>();
         children = GetComponentsInChildren<Renderer>();
+        collids = GetComponentsInChildren<Collider>();
 	}
 
 	// Use this for initialization
@@ -163,6 +165,7 @@ public class KartHealth : MonoBehaviour {
         else
         {
             transform.position = spawn.position;
+            //Debug.Log(gameObject.name + " spawned at : " + spawn.position + ", spawn name : " + spawn.gameObject.name + ", landed at : " + transform.position);
         }
         transform.rotation = spawn.rotation;
     }

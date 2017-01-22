@@ -5999,7 +5999,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 879762996}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 215.5, y: 0.76, z: 74.9}
+  m_LocalPosition: {x: 215.5, y: 1.5, z: 74.9}
   m_LocalScale: {x: 1.0000007, y: 1, z: 1.0000007}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_Children: []
@@ -7952,7 +7952,7 @@ MonoBehaviour:
   - {fileID: 1933798666}
   playerCanvas: {fileID: 286375532}
   spawnDelay: 5
-  dureePartie: 1
+  dureePartie: 2
   nbKillsToWin: 10
   mainCamera: {fileID: 536066746}
   startDisplay: {fileID: 1779278555}
@@ -12152,7 +12152,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1596034768}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 105.1, y: 0.76, z: 104.1}
+  m_LocalPosition: {x: 118.77, y: 1.5, z: 111.45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_Children: []
@@ -13784,12 +13784,12 @@ Prefab:
     - target: {fileID: 224000011332811384, guid: 99f75e0a114fa614d90894b6decb67db,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224000011332811384, guid: 99f75e0a114fa614d90894b6decb67db,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 99f75e0a114fa614d90894b6decb67db, type: 2}
