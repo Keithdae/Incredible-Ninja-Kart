@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System;
 
@@ -14,6 +15,7 @@ public class KartManager
     private Panda.PandaBehaviour pandaBehaviourIA;
     private HoverCarControl playerDrivingBehaviour;
     private ShootingShuriken playerShootingBehaviour;
+    private KartHealth healthComponent;
 
     public void Setup()
     {
@@ -21,11 +23,13 @@ public class KartManager
         if (instance.tag == "IA")
         {
             pandaBehaviourIA = instance.GetComponent<Panda.PandaBehaviour>();
+            healthComponent = instance.GetComponent<KartHealthIA>();
         }
-        else if (instance.tag == "player")
+        else if (instance.tag == "Player")
         {
             playerDrivingBehaviour = instance.GetComponent<HoverCarControl>();
             playerShootingBehaviour = instance.GetComponent<ShootingShuriken>();
+            healthComponent = instance.GetComponent<KartHealthPlayer>();
         }
     }
 
@@ -42,4 +46,31 @@ public class KartManager
             playerCanvas.enabled = val;
         }
     }
+
+    public void setSpawnDelay(float delay)
+    {
+        healthComponent.spawnDelay = delay;
+    }
+
+    public void initPlayerComponents(Camera cam, Canvas hud)
+    {
+        Image[] images = hud.GetComponentsInChildren<Image>(); // on recupere toutes les images de l'HUD (dans l'ordre)
+        playerShootingBehaviour.cam = cam;
+        playerShootingBehaviour.aimImage = images[3];
+        playerShootingBehaviour.HUDCanvas = hud;
+
+        healthComponent.slider = hud.GetComponentInChildren<Slider>();
+        healthComponent.fillImage = images[2];
+        healthComponent.cam = cam.gameObject;
+        healthComponent.spawnPoints = spawnPoints;
+        ((KartHealthPlayer)healthComponent).damageImage = images[0];
+        ((KartHealthPlayer)healthComponent).healthText = hud.GetComponentInChildren<Text>(); ;
+    }
+
+    public void initIAComponents(Camera cam)
+    {
+        healthComponent.cam = cam.gameObject;
+        healthComponent.spawnPoints = spawnPoints;
+    }
+
 }

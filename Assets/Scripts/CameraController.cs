@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using UnityStandardAssets.ImageEffects;
 
 public class CameraController : MonoBehaviour {
-	[SerializeField] Transform target;
+	[SerializeField] public Transform target;
     public Image wastedImage;
     public AudioSource wastedSound;
     public float spawnDelay;

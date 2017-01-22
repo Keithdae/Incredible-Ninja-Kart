@@ -4391,7 +4391,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   navAgent: {fileID: 0}
-  range: 20
+  exploRange: 20
+  sightRange: 50
 --- !u!114 &114000011321232710
 MonoBehaviour:
   m_ObjectHideFlags: 1
