@@ -37,7 +37,7 @@ public class ShootingShuriken : MonoBehaviour {
             munitions[i] = (GameObject)Instantiate(shuriken, shurikenSpawn.position, shurikenSpawn.rotation);
             munitions[i].layer = transform.gameObject.layer;
             munitions[i].SetActive(false);
-            munitions[i].transform.parent = this.gameObject.transform;
+            //munitions[i].transform.parent = this.gameObject.transform;
             if (this.gameObject.tag == "Player")
             {
                 munition_Images[i] = (GameObject)Instantiate(munition_Image, HUDCanvas.transform);
@@ -81,7 +81,8 @@ public class ShootingShuriken : MonoBehaviour {
         if(munitions[currentShuriken].activeSelf == false)
         {
             munitions[currentShuriken].GetComponent<Transform>().position = shurikenSpawn.position;
-            munitions[currentShuriken].GetComponent<Rigidbody>().velocity = shootingForce * shootDir;
+            //munitions[currentShuriken].GetComponent<Rigidbody>().velocity = shootingForce * shootDir;
+            munitions[currentShuriken].GetComponent<Shuriken>().shootDir = shootDir;
             munitions[currentShuriken].SetActive(true);
             munitions[currentShuriken].GetComponent<Light>().enabled = true;
             munitions[currentShuriken].GetComponentInChildren<Renderer>().enabled = true;

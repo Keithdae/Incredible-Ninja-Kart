@@ -4483,7 +4483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62810d234108eb7479b1d6f46c726f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shuriken: {fileID: 1000011893315888, guid: a868fb264615b804d89f19eba2c8aed4, type: 2}
+  shuriken: {fileID: 1000011893315888, guid: 9501f0cb79d754548b5cf826082dbc51, type: 2}
   Nombre_de_Shurikens: 3
   shootingForce: 50
   shurikenSpawn: {fileID: 4000013625128990}
