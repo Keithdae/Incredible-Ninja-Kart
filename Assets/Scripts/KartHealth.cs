@@ -6,7 +6,9 @@ public class KartHealth : MonoBehaviour {
 
 	public float startingHealth = 100f;
     [HideInInspector]
-	public float currentHealth;
+    public float currentHealth;
+    [HideInInspector]
+    public int nbOfDeaths = 0;
     [HideInInspector]
     public bool dead;
     [HideInInspector]
@@ -43,6 +45,10 @@ public class KartHealth : MonoBehaviour {
 
 	public virtual void TakeDamage(float damage){
 		currentHealth -= damage;
+        if(currentHealth < 0)
+        {
+            nbOfDeaths++;
+        }
         updateHealthUI();
     }
 

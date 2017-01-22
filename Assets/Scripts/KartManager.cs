@@ -15,7 +15,7 @@ public class KartManager
     private Panda.PandaBehaviour pandaBehaviourIA;
     private HoverCarControl playerDrivingBehaviour;
     private ShootingShuriken playerShootingBehaviour;
-    private KartHealth healthComponent;
+    public KartHealth healthComponent;
 
     public void Setup()
     {

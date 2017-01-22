@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System;
 
@@ -11,27 +12,34 @@ public class Deathmatch : MonoBehaviour
     public Transform[] spawnPointsTeam2;
     public Canvas playerCanvas;
     public float spawnDelay;
+    public int dureePartie;
+    public int nbKillsToWin;
     public GameObject mainCamera;
     public GameObject startDisplay;
+    public GameObject scoreDisplay;
 
     public KartManager[] team1;
     public KartManager[] team2;
+
+    private Text scoreText;
+    private Text timeText;
+    private float timeleft;
 
     // Use this for initialization
     void Start()
     {
         startDisplay.GetComponent<StartCountdown>().delai = startDelay;
         startDisplay.SetActive(false);
+        Text[] aux = scoreDisplay.GetComponentsInChildren<Text>();
+        timeText = aux[0];
+        scoreText = aux[1];
+        scoreDisplay.SetActive(false);
+        timeleft = 60f * dureePartie;
         spawnKarts();
         mainCamera.GetComponent<CameraController>().target = team1[0].instance.transform;
-        StartCoroutine("start");
+        StartCoroutine("gameLoop");
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    
 
     private void spawnKarts()
     {
@@ -89,6 +97,38 @@ public class Deathmatch : MonoBehaviour
         EnableAllControls(false);
         yield return new WaitForSeconds(startDelay);
         startDisplay.SetActive(false);
+    }
+
+    private IEnumerator deathmatch()
+    {
+        scoreDisplay.SetActive(true);
         EnableAllControls(true);
+        bool finished = false;
+        while (!finished)
+        {
+            timeleft -= Time.deltaTime;
+            int score1 = 0;
+            int score2 = 0;
+            for (int i = 0; i < team1.Length; i++){
+                score1 += team2[i].healthComponent.nbOfDeaths;
+                score2 += team1[i].healthComponent.nbOfDeaths;
+            }
+            scoreText.text = (score1 * 10).ToString() + " : " + (score2 * 10).ToString();
+            int minutesleft = ((int)timeleft) / 60;
+            int secondsleft = ((int)timeleft) % 60;
+            timeText.text = minutesleft.ToString() + " : " + ((secondsleft<10)?"0"+secondsleft.ToString():secondsleft.ToString());
+            if (score1 >= nbKillsToWin || score2 >= nbKillsToWin || timeleft <= 0)
+            {
+                finished = true;
+            }
+            yield return null;
+        }
+    }
+
+
+    private IEnumerator gameLoop()
+    {
+        yield return StartCoroutine(start());
+        yield return StartCoroutine(deathmatch());
     }
 }
