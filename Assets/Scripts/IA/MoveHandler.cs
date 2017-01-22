@@ -11,12 +11,14 @@ public class MoveHandler : MonoBehaviour {
 
     public bool randExplo = false;
 
-    public List<GameObject> wpAllies;
-    public List<GameObject> wpEnemies;
+    public List<Transform> wpAllies;
+    public List<Transform> wpEnemies;
 
     private static List<GameObject> enemies;
     private static List<GameObject> enemiesInSight;
     private int enemyLayer;
+
+    private int currentWP = 0;
 
     // Use this for initialization
     void Start () {
@@ -57,7 +59,26 @@ public class MoveHandler : MonoBehaviour {
 
     private void ExploreWaypoint()
     {
-
+        if (DestReached())
+        {
+            if (currentWP < wpEnemies.Count)
+            {
+                Vector3 dest;
+                if (RandomPoint(wpEnemies[Random.Range(0, wpEnemies.Count)].position, 3.0f, out dest))
+                {
+                    navAgent.SetDestination(dest);
+                }
+            }
+            else
+            {
+                Vector3 dest;
+                if (RandomPoint(wpEnemies[currentWP].position, 3.0f, out dest))
+                {
+                    navAgent.SetDestination(dest);
+                    currentWP++;
+                }
+            }
+        }
     }
 
     [Task]

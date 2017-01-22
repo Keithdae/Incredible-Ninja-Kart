@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 using System;
 
 public class Deathmatch : MonoBehaviour
@@ -11,6 +12,8 @@ public class Deathmatch : MonoBehaviour
     public GameObject kartEnemyPrefab;
     public Transform[] spawnPointsTeam1;
     public Transform[] spawnPointsTeam2;
+    public List<Transform> wpBaseTeam1;
+    public List<Transform> wpBaseTeam2;
     public Canvas playerCanvas;
     public float spawnDelay;
     public int dureePartie;
@@ -58,12 +61,16 @@ public class Deathmatch : MonoBehaviour
                 //SetLayer(team1[i].instance, 8);
             }
             team1[i].spawnPoints = spawnPointsTeam1;
+            team1[i].wpAlly = wpBaseTeam1;
+            team1[i].wpEnemy = wpBaseTeam2;
             team1[i].Setup();
             team1[i].setSpawnDelay(spawnDelay);
 
             position = new Vector3(pos2.x + (i % 2) * 8, pos2.y, pos2.z + (i / 2) * 8);
             team2[i].instance = Instantiate(kartEnemyPrefab, position, spawnPointsTeam2[0].rotation) as GameObject;
             team2[i].spawnPoints = spawnPointsTeam2;
+            team2[i].wpAlly = wpBaseTeam2;
+            team2[i].wpEnemy = wpBaseTeam1;
             team2[i].Setup();
             team2[i].setSpawnDelay(spawnDelay);
             if (i != 0)

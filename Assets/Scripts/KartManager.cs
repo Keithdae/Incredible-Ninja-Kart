@@ -1,18 +1,22 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 using System;
 
 [Serializable]
 public class KartManager
 {
     public Transform[] spawnPoints;
+    public List<Transform> wpAlly;
+    public List<Transform> wpEnemy;
     [HideInInspector]
     public GameObject instance;
     [HideInInspector]
     public Canvas playerCanvas;
 
     private Panda.PandaBehaviour pandaBehaviourIA;
+    private MoveHandler movementIA;
     private HoverCarControl playerDrivingBehaviour;
     private ShootingShuriken playerShootingBehaviour;
     public KartHealth healthComponent;
@@ -24,6 +28,7 @@ public class KartManager
         {
             pandaBehaviourIA = instance.GetComponent<Panda.PandaBehaviour>();
             healthComponent = instance.GetComponent<KartHealthIA>();
+            movementIA = instance.GetComponent<MoveHandler>();
         }
         else if (instance.tag == "Player")
         {
@@ -72,5 +77,7 @@ public class KartManager
     {
         healthComponent.cam = cam.gameObject;
         healthComponent.spawnPoints = spawnPoints;
+        movementIA.wpAllies = wpAlly;
+        movementIA.wpEnemies = wpEnemy;
     }
 }
