@@ -6,7 +6,8 @@ public class Deathmatch : MonoBehaviour
 {
     public float startDelay;
     public GameObject kartPlayerPrefab;
-    public GameObject kartIAPrefab;
+    public GameObject kartAllyPrefab;
+    public GameObject kartEnemyPrefab;
     public Transform[] spawnPointsTeam1;
     public Transform[] spawnPointsTeam2;
     public Canvas playerCanvas;
@@ -45,15 +46,15 @@ public class Deathmatch : MonoBehaviour
             position = new Vector3(pos1.x + (i % 2) * 8, pos1.y, pos1.z + (i / 2) * 8);
             if (i != 0)
             {
-                team1[i].instance = Instantiate(kartIAPrefab, position, spawnPointsTeam1[0].rotation) as GameObject;
-                SetLayer(team1[i].instance, 8);
+                team1[i].instance = Instantiate(kartAllyPrefab, position, spawnPointsTeam1[0].rotation) as GameObject;
+                //SetLayer(team1[i].instance, 8);
             }
             team1[i].spawnPoints = spawnPointsTeam1;
             team1[i].Setup();
             team1[i].setSpawnDelay(spawnDelay);
 
             position = new Vector3(pos2.x + (i % 2) * 8, pos2.y, pos2.z + (i / 2) * 8);
-            team2[i].instance = Instantiate(kartIAPrefab, position, spawnPointsTeam2[0].rotation) as GameObject;
+            team2[i].instance = Instantiate(kartEnemyPrefab, position, spawnPointsTeam2[0].rotation) as GameObject;
             team2[i].spawnPoints = spawnPointsTeam2;
             team2[i].Setup();
             team2[i].setSpawnDelay(spawnDelay);

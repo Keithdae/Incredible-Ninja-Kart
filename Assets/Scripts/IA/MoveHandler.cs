@@ -9,6 +9,11 @@ public class MoveHandler : MonoBehaviour {
     public float exploRange = 20.0f;
     public float sightRange = 50.0f;
 
+    public bool randExplo = false;
+
+    public List<GameObject> wpAllies;
+    public List<GameObject> wpEnemies;
+
     private static List<GameObject> enemies;
     private static List<GameObject> enemiesInSight;
     private int enemyLayer;
@@ -33,15 +38,27 @@ public class MoveHandler : MonoBehaviour {
     [Task]
     void Explore()
     {
+        if (randExplo)
+            ExploreRandom();
+        else
+            ExploreWaypoint();
+        Task.current.Succeed();
+    }
+
+    private void ExploreRandom()
+    {
         if (DestReached())
         {
             Vector3 dest;
             if(RandomPoint(transform.position, exploRange, out dest))
                 navAgent.SetDestination(dest);
         }
-        Task.current.Succeed();
     }
 
+    private void ExploreWaypoint()
+    {
+
+    }
 
     [Task]
     void FollowEnemy()
