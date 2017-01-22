@@ -19,7 +19,6 @@ public class Deathmatch : MonoBehaviour {
 	void Start () {
         spawnKarts();
         mainCamera.GetComponent<CameraController>().target = team1[0].instance.transform;
-        Debug.Log("WE STARTED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 	}
 
     // Update is called once per frame
@@ -29,7 +28,6 @@ public class Deathmatch : MonoBehaviour {
 
     private void spawnKarts()
     {
-        Debug.Log(kartPlayerPrefab.GetType());
         Vector3 pos1 = spawnPointsTeam1[0].position;
         Vector3 pos2 = spawnPointsTeam2[0].position;
         Vector3 position = pos1;
@@ -37,11 +35,11 @@ public class Deathmatch : MonoBehaviour {
         team1[0].playerCanvas = playerCanvas;
         for (int i = 0; i < team1.Length; i++)
         {
-            Debug.Log(i);
             position = new Vector3(pos1.x + (i % 2) * 8, pos1.y, pos1.z + (i / 2) * 8);
             if (i != 0)
             {
                 team1[i].instance = Instantiate(kartIAPrefab, position, spawnPointsTeam1[0].rotation) as GameObject;
+                SetLayer(team1[i].instance, 8);
             }
             team1[i].spawnPoints = spawnPointsTeam1;
             team1[i].Setup();
@@ -67,6 +65,14 @@ public class Deathmatch : MonoBehaviour {
         {
             team1[i].EnableControl(val);
             team2[i].EnableControl(val);
+        }
+    }
+
+    public void SetLayer(GameObject go, int layerNumber)
+    {
+        foreach (Transform trans in go.GetComponentsInChildren<Transform>(true))
+        {
+            trans.gameObject.layer = layerNumber;
         }
     }
 }

@@ -72,5 +72,4 @@ public class KartManager
         healthComponent.cam = cam.gameObject;
         healthComponent.spawnPoints = spawnPoints;
     }
-
 }
