@@ -1,15 +1,20 @@
 tree("Root")
 	repeat
-		mute
-			sequence
-				checkForEnemies
-				fallback
-					tree "FollowEnemy"
-					tree "Explore"
+		while isAlive
+			mute
+				sequence
+					checkForEnemies
+					fallback
+						tree "Attack"
+						tree "Explore"
 
-tree "FollowEnemy"
+
+
+tree "Attack"
 	while hasEnemyInSight
-		FollowEnemy
+		sequence
+			ShootEnemy
+			FollowEnemy
 	
 	
 tree "Explore"
