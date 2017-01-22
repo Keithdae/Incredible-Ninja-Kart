@@ -4310,6 +4310,8 @@ MonoBehaviour:
   spawnDelay: 5
   spawnPoints:
   - {fileID: 0}
+  hcv: {fileID: 0}
+  rig: {fileID: 0}
 --- !u!114 &114000010273080540
 MonoBehaviour:
   m_ObjectHideFlags: 1

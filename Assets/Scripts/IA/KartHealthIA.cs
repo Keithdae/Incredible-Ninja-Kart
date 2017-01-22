@@ -41,9 +41,7 @@ public class KartHealthIA : KartHealth {
         setKartVisible(false);
         childCanvas.enabled = false;
         rig.useGravity = false;
-        Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        transform.position = spawnPoint.position;
-        transform.rotation = spawnPoint.rotation;
+        goToSpawnPoint();
         navAg.SetDestination(transform.position);
         yield return new WaitForSeconds(spawnDelay);
         setKartVisible(true);
@@ -53,6 +51,7 @@ public class KartHealthIA : KartHealth {
         currentHealth = startingHealth;
         updateHealthUI();
     }
+    
 
     // For PandaBT
     [Task]

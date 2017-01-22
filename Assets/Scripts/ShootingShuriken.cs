@@ -8,9 +8,12 @@ public class ShootingShuriken : MonoBehaviour {
     public int Nombre_de_Shurikens;
     public int shootingForce;
     public Transform shurikenSpawn;
+    [HideInInspector]
     public Image aimImage;
+    [HideInInspector]
     public Camera cam;
     public float shurikenRange;
+    [HideInInspector]
     public Canvas HUDCanvas;
     public GameObject munition_Image;
 
