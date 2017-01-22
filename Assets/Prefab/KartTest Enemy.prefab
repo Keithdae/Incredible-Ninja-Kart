@@ -39,6 +39,8 @@ GameObject:
   - 114: {fileID: 114000012752999392}
   - 114: {fileID: 114000010093748332}
   - 114: {fileID: 114000011255700490}
+  - 114: {fileID: 114000013379273494}
+  - 114: {fileID: 114000013355696022}
   m_Layer: 9
   m_Name: KartTest Enemy
   m_TagString: IA
@@ -2143,7 +2145,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000014149354052}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.7, z: 1.9}
+  m_LocalPosition: {x: 0, y: -0.16, z: 1.58}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_Children: []
@@ -4275,7 +4277,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 1
 --- !u!65 &65000013812548590
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -4470,6 +4472,40 @@ MonoBehaviour:
     breakPointStatuses: 
     collapsedLines: 
     btScript: 
+--- !u!114 &114000013355696022
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010080420630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62810d234108eb7479b1d6f46c726f7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shuriken: {fileID: 1000011893315888, guid: a868fb264615b804d89f19eba2c8aed4, type: 2}
+  Nombre_de_Shurikens: 3
+  shootingForce: 50
+  shurikenSpawn: {fileID: 4000013625128990}
+  aimImage: {fileID: 0}
+  cam: {fileID: 0}
+  shurikenRange: 500
+  HUDCanvas: {fileID: 0}
+  munition_Image: {fileID: 1000012459716806, guid: 1fe2c0a0ebfd1aa4d91dc836b832da65,
+    type: 2}
+--- !u!114 &114000013379273494
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010080420630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57a45e2a562f2fb41b405236e09eea35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  accuracy: 20
+  shootDelay: 0.56
 --- !u!114 &114000014222914306
 MonoBehaviour:
   m_ObjectHideFlags: 1

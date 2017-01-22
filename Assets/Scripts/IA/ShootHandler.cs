@@ -7,12 +7,15 @@ public class ShootHandler : MonoBehaviour {
 
     [Range(0.0f, 100.0f)]
     public float accuracy = 20.0f;
+    public float shootDelay = 0.56f;
+    private float shootTimer;
 
     private MoveHandler mvHandler;
     private ShootingShuriken shoot;
 
 	// Use this for initialization
 	void Start () {
+        shootTimer = shootDelay;
         mvHandler = GetComponent<MoveHandler>();
         shoot = GetComponent<ShootingShuriken>();
 	}
@@ -21,11 +24,14 @@ public class ShootHandler : MonoBehaviour {
     [Task]
     void ShootEnemy()
     {
-        List<GameObject> inSight = mvHandler.GetEnemiesInSight();
-        foreach (GameObject enemy in inSight)
+        shootTimer += Time.deltaTime;
+        if (shootTimer > shootDelay)
         {
+            List<GameObject> inSight = mvHandler.GetEnemiesInSight();
+            GameObject enemy = inSight[0];
             Vector3 dir = enemy.transform.position - transform.position;
             shoot.Fire(dir);
+            shootTimer = 0f;
         }
         Task.current.Succeed();
     }

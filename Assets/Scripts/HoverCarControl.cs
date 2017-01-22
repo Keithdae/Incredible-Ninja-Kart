@@ -11,6 +11,7 @@ public class HoverCarControl : MonoBehaviour
 	public float gravityForce = 1000f;
   	public float hoverHeight = 1.5f;
   	public GameObject[] hoverPoints;
+    public LayerMask layerMask;
 
   	public float forwardAcceleration = 8000f;
   	public float reverseAcceleration = 4000f;
@@ -26,15 +27,15 @@ public class HoverCarControl : MonoBehaviour
     float wheelAngle;
 	float wheelTurnSpeed = 1.5f;
 
- 	int layerMask;
+ 	//int layerMask;
 
 	void Start()
   	{
     	body = GetComponent<Rigidbody>();
 		body.centerOfMass = Vector3.down;
 
-	    layerMask = 1 << LayerMask.NameToLayer("Vehicle");
-	    layerMask = ~layerMask;
+	    /*layerMask = 1 << LayerMask.NameToLayer("Team1");
+	    layerMask = ~layerMask;*/
 	}
 
 	// Uncomment this to see a visual indication of the raycast hit points in the editor window
