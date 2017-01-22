@@ -91,11 +91,12 @@ public class KartHealth : MonoBehaviour {
         bool trouve = false;
         int i = 0;
         sortClosestSpawn(); // on tri le tableau des points de spawn
-        while(!trouve && i < spawnPoints.Length)
+        while (!trouve && i < spawnPoints.Length)
         {
-            Collider[] colliders = Physics.OverlapSphere(spawnPoints[i].position, 50, opponentLayer(gameObject));
-            if(colliders.Length == 0)
+            Collider[] colliders = Physics.OverlapSphere(spawnPoints[i].position, 50, 1<<opponentLayer(gameObject));
+            if (colliders == null || colliders.Length == 0)
             {
+                Debug.Log("Spawn choisi: " + spawnPoints[i].name);
                 trouve = true;
                 res = i;
             }
@@ -104,6 +105,7 @@ public class KartHealth : MonoBehaviour {
                 float minDist = 100000;
                 foreach(Collider c in colliders)
                 {
+                    Debug.Log(c.name);
                     if ((spawnPoints[i].position - c.transform.position).magnitude < minDist)
                     {
                         minDist = (spawnPoints[i].position - c.transform.position).magnitude;
@@ -115,6 +117,7 @@ public class KartHealth : MonoBehaviour {
                     secondChoice = i;
                 }
             }
+            i++;
         }
         return trouve?spawnPoints[res]:spawnPoints[secondChoice];
     }
@@ -147,7 +150,7 @@ public class KartHealth : MonoBehaviour {
     {
         // on determine a quel point on respawn, et on evite de respawn sur un coequipier
         Transform spawn = getSpawnPoint();
-        Collider[] colliders = Physics.OverlapSphere(spawn.position, 5, gameObject.layer);
+        Collider[] colliders = Physics.OverlapSphere(spawn.position, 5, 1<<gameObject.layer);
         if (colliders.Length > 0)
         {
             transform.position = new Vector3(spawn.position.x + 8, spawn.position.y, spawn.position.z);
