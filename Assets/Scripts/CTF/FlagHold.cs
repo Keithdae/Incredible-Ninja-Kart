@@ -3,7 +3,7 @@ using System.Collections;
 
 public class FlagHold : MonoBehaviour {
 
-    FlagTrigger flagHeld;
+    public FlagTrigger flagHeld;
     Transform prevParent;
     public bool hasFlag = false;
 
@@ -32,6 +32,17 @@ public class FlagHold : MonoBehaviour {
             hasFlag = false;
             flagHeld.transform.parent = prevParent;
             flagHeld.enableCollider();
+            flagHeld = null;
+        }
+    }
+
+    public void dropFlagToBase()
+    {
+        if (flagHeld != null)
+        {
+            hasFlag = false;
+            flagHeld.backToBase();
+            flagHeld = null;
         }
     }
 }

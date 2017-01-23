@@ -13,7 +13,6 @@ public class KartHealth : MonoBehaviour {
     public bool dead;
     [HideInInspector]
     public Slider slider; // health slider 
-    [HideInInspector]
     public Image fillImage; // fill image of health slider
 	public Color zeroHealthColor; 
 	public Color fullHealthColor;

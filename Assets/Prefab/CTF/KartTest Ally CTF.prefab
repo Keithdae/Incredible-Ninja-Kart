@@ -37,11 +37,11 @@ GameObject:
   - 54: {fileID: 54000010054933616}
   - 195: {fileID: 195000014288239166}
   - 114: {fileID: 114000012752999392}
-  - 114: {fileID: 114000010093748332}
   - 114: {fileID: 114000011255700490}
   - 114: {fileID: 114000013379273494}
   - 114: {fileID: 114000013355696022}
   - 114: {fileID: 114000010091282702}
+  - 114: {fileID: 114000010587130964}
   m_Layer: 8
   m_Name: KartTest Ally CTF
   m_TagString: IA
@@ -4253,31 +4253,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae26ffb1d180a654f87ced483a42f2c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114000010093748332
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010080420630}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b27ca4928e4d93145ba72ddb04fbf290, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingHealth: 100
-  currentHealth: 0
-  nbOfDeaths: 0
-  dead: 0
-  slider: {fileID: 114000010414799260}
-  fillImage: {fileID: 114000011432785572}
-  zeroHealthColor: {r: 1, g: 0, b: 0, a: 1}
-  fullHealthColor: {r: 0, g: 1, b: 0, a: 1}
-  cam: {fileID: 0}
-  spawnDelay: 5
-  spawnPoints:
-  - {fileID: 0}
-  hcv: {fileID: 0}
-  rig: {fileID: 0}
+  flagHeld: {fileID: 0}
+  hasFlag: 0
 --- !u!114 &114000010273080540
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4347,6 +4324,30 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114000010587130964
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010080420630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491fe15a378a0544cb4034f370681cad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 100
+  currentHealth: 0
+  nbOfDeaths: 0
+  dead: 0
+  slider: {fileID: 0}
+  fillImage: {fileID: 114000011432785572}
+  zeroHealthColor: {r: 1, g: 0, b: 0, a: 1}
+  fullHealthColor: {r: 0, g: 1, b: 0, a: 1}
+  cam: {fileID: 0}
+  spawnDelay: 5
+  spawnPoints: []
+  hcv: {fileID: 0}
+  rig: {fileID: 0}
 --- !u!114 &114000011255700490
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4430,7 +4431,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scripts:
-  - {fileID: 4900000, guid: a3e92a2eabe3ba34696423ac29c97b63, type: 3}
+  - {fileID: 4900000, guid: f40eb1a8525d61945a70ce7932f86b37, type: 3}
   autoReset: 1
   tickOn: 0
   sourceInfos:

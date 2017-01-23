@@ -3,10 +3,13 @@ using System.Collections;
 using UnityEngine.UI;
 using Panda;
 
-public class KartHealthIA : KartHealth {
+public class KartHealthIaCtf : KartHealth {
     private Canvas childCanvas;
     private NavMeshAgent navAg;
 
+    private FlagHold hold;
+
+    private bool fellToDeath = false;
 
     // Use this for initialization
     protected override void Start()
@@ -14,6 +17,8 @@ public class KartHealthIA : KartHealth {
         base.Start();
         childCanvas = GetComponentInChildren<Canvas>();
         navAg = GetComponentInChildren<NavMeshAgent>();
+        slider = GetComponentInChildren<Slider>();
+        hold = GetComponent<FlagHold>();
         updateHealthUI();
     }
 	
@@ -22,10 +27,12 @@ public class KartHealthIA : KartHealth {
     {
         if (currentHealth <= 0 && !dead)
         {
+            fellToDeath = false;
             onDeath();
         }
         if (transform.position.y < -25f && !dead)
         {
+            fellToDeath = true;
             onDeath();
         }
         childCanvas.transform.LookAt(cam.transform);
@@ -45,6 +52,15 @@ public class KartHealthIA : KartHealth {
         foreach (Collider col in collids)
         {
             col.enabled = false;
+        }
+        // Drop the flag on the ground
+        if (hold.hasFlag)
+        {
+            // On est mort sur le sol, il suffit de laisser le flag sur place
+            if (!fellToDeath)
+                hold.dropFlag();
+            else // On est tomber dans le vide avec le flag, il retourne a sa base
+                hold.dropFlagToBase();
         }
         goToSpawnPoint();
         navAg.SetDestination(transform.position);
@@ -66,7 +82,7 @@ public class KartHealthIA : KartHealth {
 
     // For PandaBT
     [Task]
-    void isAlive(){
+    void isAliveCtf(){
         Task.current.Complete(!dead);
     }
 }

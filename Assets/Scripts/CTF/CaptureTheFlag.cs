@@ -22,8 +22,8 @@ public class CaptureTheFlag : MonoBehaviour {
     public GameObject scoreDisplay;
     public GameObject endDisplay;
 
-    public KartManager[] team1;
-    public KartManager[] team2;
+    public KartManagerCtf[] team1;
+    public KartManagerCtf[] team2;
 
     private Text scoreText;
     private Text timeText;

@@ -28,13 +28,10 @@ public class FlagArea : MonoBehaviour {
             }
             if (hold.hasFlag)
             {
-                FlagTrigger flag = target.GetComponentInChildren<FlagTrigger>();
-                while (flag == null)
-                {
-                    target = target.transform.parent.gameObject;
-                    flag = target.GetComponentInChildren<FlagTrigger>();
-                }
+                FlagTrigger flag = hold.flagHeld;
                 flag.backToBase();
+                hold.hasFlag = false;
+                hold.flagHeld = null;
                 manager.CaptureFlag(target.layer);
             }
         }

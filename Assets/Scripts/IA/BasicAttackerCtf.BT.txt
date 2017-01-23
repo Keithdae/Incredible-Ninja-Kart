@@ -1,0 +1,21 @@
+tree("Root")
+	repeat
+		while isAliveCtf
+			mute
+				sequence
+					checkForEnemies
+					fallback
+						tree "Attack"
+						tree "Explore"
+
+
+
+tree "Attack"
+	while hasEnemyInSight
+		sequence
+			ShootEnemy
+			FollowEnemy
+	
+	
+tree "Explore"
+	Explore
