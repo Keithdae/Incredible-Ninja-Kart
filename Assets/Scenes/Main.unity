@@ -601,8 +601,8 @@ MonoBehaviour:
   - {fileID: 1933798666}
   playerCanvas: {fileID: 286375532}
   spawnDelay: 5
-  dureePartie: 3
-  nbKillsToWin: 4
+  dureePartie: 7
+  nbKillsToWin: 35
   mainCamera: {fileID: 536066746}
   startDisplay: {fileID: 1779278555}
   scoreDisplay: {fileID: 1779278554}
@@ -621,7 +621,31 @@ MonoBehaviour:
     instance: {fileID: 0}
     playerCanvas: {fileID: 0}
     healthComponent: {fileID: 0}
+  - spawnPoints: []
+    wpAlly: []
+    wpEnemy: []
+    instance: {fileID: 0}
+    playerCanvas: {fileID: 0}
+    healthComponent: {fileID: 0}
+  - spawnPoints: []
+    wpAlly: []
+    wpEnemy: []
+    instance: {fileID: 0}
+    playerCanvas: {fileID: 0}
+    healthComponent: {fileID: 0}
   team2:
+  - spawnPoints: []
+    wpAlly: []
+    wpEnemy: []
+    instance: {fileID: 0}
+    playerCanvas: {fileID: 0}
+    healthComponent: {fileID: 0}
+  - spawnPoints: []
+    wpAlly: []
+    wpEnemy: []
+    instance: {fileID: 0}
+    playerCanvas: {fileID: 0}
+    healthComponent: {fileID: 0}
   - spawnPoints: []
     wpAlly: []
     wpEnemy: []

@@ -10874,7 +10874,47 @@ MonoBehaviour:
     instance: {fileID: 0}
     playerCanvas: {fileID: 0}
     healthComponent: {fileID: 0}
+  - spawnPoints: []
+    wpAlly: []
+    wpEnemy: []
+    flagAreaAlly: {fileID: 0}
+    flagAraEnemy: {fileID: 0}
+    flagAlly: {fileID: 0}
+    flagEnemy: {fileID: 0}
+    instance: {fileID: 0}
+    playerCanvas: {fileID: 0}
+    healthComponent: {fileID: 0}
+  - spawnPoints: []
+    wpAlly: []
+    wpEnemy: []
+    flagAreaAlly: {fileID: 0}
+    flagAraEnemy: {fileID: 0}
+    flagAlly: {fileID: 0}
+    flagEnemy: {fileID: 0}
+    instance: {fileID: 0}
+    playerCanvas: {fileID: 0}
+    healthComponent: {fileID: 0}
   team2:
+  - spawnPoints: []
+    wpAlly: []
+    wpEnemy: []
+    flagAreaAlly: {fileID: 0}
+    flagAraEnemy: {fileID: 0}
+    flagAlly: {fileID: 0}
+    flagEnemy: {fileID: 0}
+    instance: {fileID: 0}
+    playerCanvas: {fileID: 0}
+    healthComponent: {fileID: 0}
+  - spawnPoints: []
+    wpAlly: []
+    wpEnemy: []
+    flagAreaAlly: {fileID: 0}
+    flagAraEnemy: {fileID: 0}
+    flagAlly: {fileID: 0}
+    flagEnemy: {fileID: 0}
+    instance: {fileID: 0}
+    playerCanvas: {fileID: 0}
+    healthComponent: {fileID: 0}
   - spawnPoints: []
     wpAlly: []
     wpEnemy: []
@@ -14260,6 +14300,21 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114000011624116336, guid: 99f75e0a114fa614d90894b6decb67db,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1391142663}
+    - target: {fileID: 114000011624116336, guid: 99f75e0a114fa614d90894b6decb67db,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: backToMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 82000013939117126, guid: 99f75e0a114fa614d90894b6decb67db,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b8841182ba51f50489b12f8de2c27909, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 99f75e0a114fa614d90894b6decb67db, type: 2}
   m_IsPrefabParent: 0

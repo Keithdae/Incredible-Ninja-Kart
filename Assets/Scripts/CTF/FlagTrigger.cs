@@ -24,7 +24,6 @@ public class FlagTrigger : MonoBehaviour {
 
     void OnTriggerEnter(Collider other){
         GameObject target = other.gameObject;
-        Debug.Log("Collided with : " + target.name);
         if (target.layer == enemyLayer)
         {
             // Pick up
