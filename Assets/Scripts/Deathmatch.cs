@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using UnityEngine.SceneManagement;
 
 public class Deathmatch : MonoBehaviour
 {
@@ -154,7 +155,7 @@ public class Deathmatch : MonoBehaviour
             score2 += team1[i].healthComponent.nbOfDeaths;
         }
         String aux = score1 > score2 ? "You win!\n" : (score2 > score1 ? "You lose!\n" : "It's a draw!\n");
-        aux += score1.ToString() + " : " + score2.ToString();
+        aux += (score1*10).ToString() + " : " + (score2*10).ToString();
         endText.text = aux;
         endText.color = score1 > score2 ? Color.green : (score2 > score1 ? Color.red : Color.yellow);
         yield return null;
@@ -166,5 +167,10 @@ public class Deathmatch : MonoBehaviour
         yield return StartCoroutine(start());
         yield return StartCoroutine(deathmatch());
         yield return StartCoroutine(end());
+    }
+
+    public void backToMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }
