@@ -53,7 +53,7 @@ public class KartManagerCtf
         {
             playerDrivingBehaviour.enabled = val;
             playerShootingBehaviour.enabled = val;
-            //playerCanvas.enabled = val;
+            instance.GetComponent<ShootingParchemin>().enabled = val;
         }
     }
 

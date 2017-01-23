@@ -18,10 +18,10 @@ public class PhysicalExplosion : MonoBehaviour
                 Rigidbody rb = hitColliders[i].gameObject.GetComponentsInParent<Rigidbody>()[0];
                 rb.AddExplosionForce(Force, transform.position, Radius, 0.0F); // push game object
                 rb.gameObject.GetComponent<KartHealth>().TakeDamage(CalculateDamage(hitColliders[i].transform.position));
-                exploded = true;
             }
 			
         }
+        exploded = true;
         Destroy(gameObject,0.2f);// destroy explosion
     }
 

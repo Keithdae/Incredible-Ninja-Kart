@@ -59,7 +59,6 @@ public class Deathmatch : MonoBehaviour
         Vector3 position = pos1;
         team1[0].instance = (GameObject)Instantiate(kartPlayerPrefab, position, spawnPointsTeam1[0].rotation);
         team1[0].instance.GetComponent<ShootingParchemin>().cam = mainCamera.GetComponent<Camera>();
-        Debug.Log(bombSlider);
         team1[0].instance.GetComponent<ShootingParchemin>().bomb = bombSlider;
         team1[0].playerCanvas = playerCanvas;
         for (int i = 0; i < team1.Length; i++)

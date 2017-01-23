@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using UnityEngine.SceneManagement;
 
 public class CaptureTheFlag : MonoBehaviour {
     public float startDelay;
@@ -25,6 +26,7 @@ public class CaptureTheFlag : MonoBehaviour {
     public GameObject startDisplay;
     public GameObject scoreDisplay;
     public GameObject endDisplay;
+    public GameObject bombSlider;
 
     public KartManagerCtf[] team1;
     public KartManagerCtf[] team2;
@@ -61,6 +63,8 @@ public class CaptureTheFlag : MonoBehaviour {
         Vector3 pos2 = spawnPointsTeam2[0].position;
         Vector3 position = pos1;
         team1[0].instance = (GameObject)Instantiate(kartPlayerPrefab, position, spawnPointsTeam1[0].rotation);
+        team1[0].instance.GetComponent<ShootingParchemin>().cam = mainCamera.GetComponent<Camera>();
+        team1[0].instance.GetComponent<ShootingParchemin>().bomb = bombSlider;
         team1[0].playerCanvas = playerCanvas;
         for (int i = 0; i < team1.Length; i++)
         {
@@ -133,9 +137,11 @@ public class CaptureTheFlag : MonoBehaviour {
     {
         startDisplay.SetActive(true);
         mainCamera.GetComponent<CameraController>().enableBlur(true);
+        bombSlider.SetActive(false);
         EnableAllControls(false);
         yield return new WaitForSeconds(startDelay);
         mainCamera.GetComponent<CameraController>().enableBlur(false);
+        bombSlider.SetActive(true);
         startDisplay.SetActive(false);
     }
 
@@ -178,5 +184,10 @@ public class CaptureTheFlag : MonoBehaviour {
         yield return StartCoroutine(start());
         yield return StartCoroutine(capturetheflag());
         yield return StartCoroutine(end());
+    }
+
+    public void backToMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }
