@@ -68,10 +68,11 @@ public class Shuriken : MonoBehaviour {
             currentLifeTime += Time.deltaTime;
             Vector3 nextPos = transform.position + shootDir * speed * Time.deltaTime;
             RaycastHit hit;
+            int layerMask = ~( (1<<10) | (1<<11) );
             Debug.DrawRay(transform.position, shootDir * speed, Color.red);
-            if(Physics.Linecast(transform.position, nextPos, out hit)){
+            if(Physics.Linecast(transform.position, nextPos, out hit, layerMask)){
                 GameObject target = hit.transform.gameObject;
-                //Debug.Log(hit.transform.gameObject.name);
+                Debug.Log("Shuriken hit : " + hit.transform.gameObject.name);
                 // on vérifie qu'on a touché un ennemi
                 if (!collided && target.layer == opponentLayer (this.gameObject)) {
                     KartHealth otherHealth = target.GetComponent<KartHealth>();

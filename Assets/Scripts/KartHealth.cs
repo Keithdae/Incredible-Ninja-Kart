@@ -112,7 +112,7 @@ public class KartHealth : MonoBehaviour {
                 float minDist = 100000;
                 foreach(Collider c in colliders)
                 {
-                    Debug.Log(c.name);
+                    //Debug.Log(c.name);
                     if ((spawnPoints[i].position - c.transform.position).magnitude < minDist)
                     {
                         minDist = (spawnPoints[i].position - c.transform.position).magnitude;
