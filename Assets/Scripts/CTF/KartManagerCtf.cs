@@ -20,7 +20,7 @@ public class KartManagerCtf
     public Canvas playerCanvas;
 
     private Panda.PandaBehaviour pandaBehaviourIA;
-    private MoveHandler movementIA;
+    private MoveHandlerCtf movementIA;
     private HoverCarControl playerDrivingBehaviour;
     private ShootingShuriken playerShootingBehaviour;
     public KartHealth healthComponent;
@@ -32,7 +32,7 @@ public class KartManagerCtf
         {
             pandaBehaviourIA = instance.GetComponent<Panda.PandaBehaviour>();
             healthComponent = instance.GetComponent<KartHealthIaCtf>();
-            movementIA = instance.GetComponent<MoveHandler>();
+            movementIA = instance.GetComponent<MoveHandlerCtf>();
         }
         else if (instance.tag == "Player")
         {

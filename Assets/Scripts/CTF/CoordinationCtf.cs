@@ -7,7 +7,7 @@ public class CoordinationCtf : MonoBehaviour {
 
     public float communicationRadius = 100.0f;
 
-    private MoveHandler mvHandler;
+    private MoveHandlerCtf mvHandler;
 
     private List<GameObject> alliesInRange;
 
@@ -17,7 +17,7 @@ public class CoordinationCtf : MonoBehaviour {
     void Start () {
         allyInNeed = null;
         alliesInRange = new List<GameObject>();
-        mvHandler = GetComponent<MoveHandler>();
+        mvHandler = GetComponent<MoveHandlerCtf>();
     }
 	
 	// Update is called once per frame

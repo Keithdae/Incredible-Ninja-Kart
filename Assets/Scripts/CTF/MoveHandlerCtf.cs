@@ -3,13 +3,25 @@ using System.Collections;
 using Panda;
 using System.Collections.Generic;
 
-public class MoveHandler : MonoBehaviour {
+public class MoveHandlerCtf : MonoBehaviour {
 
     public NavMeshAgent navAgent;
     public float exploRange = 20.0f;
     public float sightRange = 50.0f;
 
     public bool randExplo = false;
+
+    [HideInInspector]
+    public Transform flagAreaAlly;
+    [HideInInspector]
+    public Transform flagAreaEnemy;
+
+    //[HideInInspector]
+    public GameObject flagAlly;
+    private FlagTrigger flagAllyTrigger;
+    //[HideInInspector]
+    public GameObject flagEnemy;
+
 
     [HideInInspector]
     public List<Transform> wpAllies;
@@ -21,6 +33,7 @@ public class MoveHandler : MonoBehaviour {
     private List<GameObject> enemiesInSight;
     private int enemyLayer;
 
+    private FlagHold hold;
 
     private KartHealthIaCtf healthComp;
 
@@ -32,6 +45,8 @@ public class MoveHandler : MonoBehaviour {
         enemies = new List<GameObject>();
         enemiesInSight = new List<GameObject>();
         navAgent = GetComponent<NavMeshAgent>();
+        hold = GetComponent<FlagHold>();
+        flagAllyTrigger = flagAlly.GetComponent<FlagTrigger>();
         healthComp = GetComponent<KartHealthIaCtf>();
         enemyLayer = opponentLayer();
         GameObject[] gos = GameObject.FindObjectsOfType(typeof(GameObject)) as GameObject[];
@@ -118,7 +133,14 @@ public class MoveHandler : MonoBehaviour {
         }
         Task.current.Succeed();
     }
-        
+
+    [Task]
+    void GoBackToBase()
+    {
+        navAgent.SetDestination(flagAreaAlly.position);
+        Task.current.Succeed();
+    }
+
     [Task]
     void hasEnemyInSight()
     {
@@ -129,6 +151,68 @@ public class MoveHandler : MonoBehaviour {
     void hasMultipleEnemyInSight()
     {
         Task.current.Complete(enemiesInSight.Count>1);
+    }
+
+    [Task]
+    void hasFlag()
+    {
+        Task.current.Complete(hold.hasFlag);
+    }
+
+    [Task]
+    void enemyFlagInSight()
+    {
+        Task.current.Complete(checkForEnemyFlag());
+    }
+
+    bool checkForEnemyFlag()
+    {
+        bool res = false;
+        Vector3 dir = flagEnemy.transform.position - transform.position;
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, dir, out hit, sightRange))
+        {
+            if (hit.transform.gameObject.layer == flagEnemy.layer && hit.transform.gameObject.CompareTag(flagEnemy.tag))
+                res = true;
+        }
+        return res;
+    }
+
+    [Task]
+    void GoToEnemyFlag()
+    {
+        moveTo(flagEnemy.transform.position);
+        Task.current.Succeed();
+    }
+
+    [Task]
+    void teamFlagPickable()
+    {
+        Task.current.Complete(checkForAllyFlag());
+    }
+
+    bool checkForAllyFlag()
+    {
+        // Le flag ne doit pas etre porte, ni a sa position de depart, et egalement etre en vue
+        bool res = !flagAllyTrigger.isHeld() && !flagAllyTrigger.isAtStart();
+        if (res)
+        {
+            Vector3 dir = flagAlly.transform.position - transform.position;
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, dir, out hit, sightRange))
+            {
+                if (!(hit.transform.gameObject.layer == flagAlly.layer && hit.transform.gameObject.CompareTag(flagAlly.tag)))
+                    res = false;
+            }
+        }
+        return res;
+    }
+
+    [Task]
+    void GoToTeamFlag()
+    {
+        moveTo(flagAlly.transform.position);
+        Task.current.Succeed();
     }
 
     [Task]
