@@ -38,8 +38,8 @@ GameObject:
   - 114: {fileID: 114000010729738512}
   - 114: {fileID: 114000010109262474}
   - 114: {fileID: 114000010084651690}
-  - 114: {fileID: 114000012094937306}
   - 114: {fileID: 114000012079468020}
+  - 114: {fileID: 114000014014297180}
   m_Layer: 8
   m_Name: KartTest CTF
   m_TagString: Player
@@ -4328,6 +4328,15 @@ MonoBehaviour:
   cam: {fileID: 0}
   parchemin: {fileID: 1000014176693858, guid: 0238260b31788594cacbad6a4ac12ffe, type: 2}
   bomb: {fileID: 0}
+--- !u!114 &114000014014297180
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010080420630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1fae8591a3ec7448820bedca50288fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 100

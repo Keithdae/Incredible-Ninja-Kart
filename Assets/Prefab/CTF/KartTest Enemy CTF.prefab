@@ -37,12 +37,12 @@ GameObject:
   - 54: {fileID: 54000010054933616}
   - 195: {fileID: 195000014288239166}
   - 114: {fileID: 114000012752999392}
-  - 114: {fileID: 114000011255700490}
-  - 114: {fileID: 114000013379273494}
   - 114: {fileID: 114000013355696022}
   - 114: {fileID: 114000013027074504}
   - 114: {fileID: 114000012694264580}
   - 114: {fileID: 114000010258518702}
+  - 114: {fileID: 114000013021181974}
+  - 114: {fileID: 114000010541622104}
   m_Layer: 9
   m_Name: KartTest Enemy CTF
   m_TagString: IA
@@ -4373,7 +4373,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114000011255700490
+--- !u!114 &114000010541622104
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -4381,19 +4381,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000010080420630}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26a9d2a7b7d10c647bf8f62b862b773d, type: 3}
+  m_Script: {fileID: 11500000, guid: b85efd6b50fbfe540bb7cee057b4fb43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navAgent: {fileID: 0}
-  exploRange: 20
-  sightRange: 50
-  randExplo: 0
-  flagAreaAlly: {fileID: 0}
-  flagAreaEnemy: {fileID: 0}
-  flagAlly: {fileID: 0}
-  flagEnemy: {fileID: 0}
-  wpAllies: []
-  wpEnemies: []
+  accuracy: 20
+  shootDelay: 0.56
 --- !u!114 &114000011321232710
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4493,6 +4485,27 @@ MonoBehaviour:
     breakPointStatuses: 
     collapsedLines: 
     btScript: 
+--- !u!114 &114000013021181974
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010080420630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 380bb65fd71505d4484e751bb770f672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  navAgent: {fileID: 0}
+  exploRange: 20
+  sightRange: 50
+  randExplo: 0
+  flagAreaAlly: {fileID: 0}
+  flagAreaEnemy: {fileID: 0}
+  flagAlly: {fileID: 0}
+  flagEnemy: {fileID: 0}
+  wpAllies: []
+  wpEnemies: []
 --- !u!114 &114000013027074504
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4527,19 +4540,6 @@ MonoBehaviour:
   HUDCanvas: {fileID: 0}
   munition_Image: {fileID: 1000012459716806, guid: 1fe2c0a0ebfd1aa4d91dc836b832da65,
     type: 2}
---- !u!114 &114000013379273494
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010080420630}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57a45e2a562f2fb41b405236e09eea35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  accuracy: 20
-  shootDelay: 0.56
 --- !u!114 &114000014222914306
 MonoBehaviour:
   m_ObjectHideFlags: 1
