@@ -35,6 +35,8 @@ public class MoveHandler : MonoBehaviour {
 
     private FlagHold hold;
 
+    private KartHealthIaCtf healthComp;
+
     private int currentWP = 0;
 
     // Use this for initialization
@@ -45,6 +47,7 @@ public class MoveHandler : MonoBehaviour {
         navAgent = GetComponent<NavMeshAgent>();
         hold = GetComponent<FlagHold>();
         flagAllyTrigger = flagAlly.GetComponent<FlagTrigger>();
+        healthComp = GetComponent<KartHealthIaCtf>();
         enemyLayer = opponentLayer();
         GameObject[] gos = GameObject.FindObjectsOfType(typeof(GameObject)) as GameObject[];
         foreach(GameObject go in gos)
@@ -210,6 +213,12 @@ public class MoveHandler : MonoBehaviour {
     {
         moveTo(flagAlly.transform.position);
         Task.current.Succeed();
+    }
+
+    [Task]
+    void lowHealth()
+    {
+        Task.current.Complete(healthComp.currentHealth < (healthComp.startingHealth / 2.0f));
     }
         
     // Utility functions ---------------------------

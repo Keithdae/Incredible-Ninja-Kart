@@ -4364,7 +4364,10 @@ MonoBehaviour:
   exploRange: 20
   sightRange: 50
   randExplo: 0
-  flagArea: {fileID: 0}
+  flagAreaAlly: {fileID: 0}
+  flagAreaEnemy: {fileID: 0}
+  flagAlly: {fileID: 0}
+  flagEnemy: {fileID: 0}
   wpAllies: []
   wpEnemies: []
 --- !u!114 &114000011321232710
@@ -4511,7 +4514,7 @@ NavMeshAgent:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010080420630}
   m_Enabled: 1
-  m_Radius: 1
+  m_Radius: 1.3
   m_Speed: 30
   m_Acceleration: 35
   avoidancePriority: 50
@@ -4520,7 +4523,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 1
+  m_Height: 2
   m_BaseOffset: 0.84
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4

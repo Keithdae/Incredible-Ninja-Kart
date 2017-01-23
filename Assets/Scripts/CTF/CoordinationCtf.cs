@@ -33,8 +33,15 @@ public class CoordinationCtf : MonoBehaviour {
         List<GameObject> mates = CheckAlliesInRange();
         foreach (GameObject mate in mates)
         {
-            CoordinationCtf coord = mate.GetComponent<CoordinationCtf>();
-            coord.askHelp(gameObject);
+            if (mate.CompareTag("Player"))
+            {
+                // TODO
+            }
+            else
+            {
+                CoordinationCtf coord = mate.GetComponent<CoordinationCtf>();
+                coord.askHelp(gameObject);
+            }
         }
         Task.current.Succeed();
     }

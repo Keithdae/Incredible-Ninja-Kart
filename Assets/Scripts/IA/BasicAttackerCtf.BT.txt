@@ -13,37 +13,44 @@ tree("Root")
 
 tree "Priority"
 	while hasFlag
-		sequence
-			GoBackToBase
-			while hasEnemyInSight
-				sequence
-					CallForHelp
-					ShootEnemy
+		mute
+			sequence
+				GoBackToBase
+				while hasEnemyInSight
+					sequence
+						CallForHelp
+						ShootEnemy
 
 tree "FlagPickup"
 	while teamFlagPickable
-		sequence
-			GoToTeamFlag
-			while hasEnemyInSight
-				sequence
-					CallForHelp
-					ShootEnemy
+		mute
+			sequence
+				GoToTeamFlag
+				while hasEnemyInSight
+					sequence
+						CallForHelp
+						ShootEnemy
 	
 tree "Combat"
 	while hasEnemyInSight
-		sequence
-			fallback
-				
+		mute
+			sequence
 				ShootEnemy
-			FollowEnemy
+				FollowEnemy
+				while 
+					fallback
+						hasMultipleEnemyInSight
+						lowHealth
+					CallForHelp
 	
 	
 tree "Help"
 	while hasAllyInNeed
-		sequence
-			GoToHelp
-			while hasEnemyInSight
-				ShootEnemy
+		mute 
+			sequence
+				GoToHelp
+				while hasEnemyInSight
+					ShootEnemy
 	
 tree "Objective"
 	fallback

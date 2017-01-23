@@ -67,7 +67,6 @@ public class KartHealthPlayerCtf : KartHealth {
             col.enabled = false;
         }
         // Drop the flag on the ground
-        Debug.Log("HasFlag : " + hold.hasFlag);
         if (hold.hasFlag)
         {
             // On est mort sur le sol, il suffit de laisser le flag sur place
