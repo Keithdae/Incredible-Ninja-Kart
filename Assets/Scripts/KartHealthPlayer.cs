@@ -55,12 +55,20 @@ public class KartHealthPlayer : KartHealth {
         setKartVisible(false);
         hcv.enabled = false;
         rig.useGravity = false;
+        foreach (Collider col in collids)
+        {
+            col.enabled = false;
+        }
         goToSpawnPoint();
         yield return new WaitForSeconds(spawnDelay);
         setKartVisible(true);
         dead = false;
         hcv.enabled = true;
         rig.useGravity = true;
+        foreach (Collider col in collids)
+        {
+            col.enabled = true;
+        }
         currentHealth = startingHealth;
         updateHealthUI();
     }
