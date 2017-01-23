@@ -23,6 +23,7 @@ public class Deathmatch : MonoBehaviour
     public GameObject startDisplay;
     public GameObject scoreDisplay;
     public GameObject endDisplay;
+    public GameObject bombSlider;
 
     public KartManager[] team1;
     public KartManager[] team2;
@@ -57,6 +58,9 @@ public class Deathmatch : MonoBehaviour
         Vector3 pos2 = spawnPointsTeam2[0].position;
         Vector3 position = pos1;
         team1[0].instance = (GameObject)Instantiate(kartPlayerPrefab, position, spawnPointsTeam1[0].rotation);
+        team1[0].instance.GetComponent<ShootingParchemin>().cam = mainCamera.GetComponent<Camera>();
+        Debug.Log(bombSlider);
+        team1[0].instance.GetComponent<ShootingParchemin>().bomb = bombSlider;
         team1[0].playerCanvas = playerCanvas;
         for (int i = 0; i < team1.Length; i++)
         {
@@ -109,9 +113,11 @@ public class Deathmatch : MonoBehaviour
     {
         startDisplay.SetActive(true);
         mainCamera.GetComponent<CameraController>().enableBlur(true);
+        bombSlider.SetActive(false);
         EnableAllControls(false);
         yield return new WaitForSeconds(startDelay);
         mainCamera.GetComponent<CameraController>().enableBlur(false);
+        bombSlider.SetActive(true);
         startDisplay.SetActive(false);
     }
 

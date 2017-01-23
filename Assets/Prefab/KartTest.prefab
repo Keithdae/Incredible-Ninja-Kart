@@ -72,6 +72,7 @@ GameObject:
   - 114: {fileID: 114000010729738512}
   - 114: {fileID: 114000010109262474}
   - 114: {fileID: 114000011325341370}
+  - 114: {fileID: 114000013783484722}
   m_Layer: 8
   m_Name: KartTest
   m_TagString: Player
@@ -4223,6 +4224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 100
   currentHealth: 100
+  nbOfDeaths: 0
   dead: 0
   slider: {fileID: 0}
   fillImage: {fileID: 0}
@@ -4232,10 +4234,28 @@ MonoBehaviour:
   spawnDelay: 5
   spawnPoints:
   - {fileID: 0}
+  hcv: {fileID: 0}
+  rig: {fileID: 0}
   healthText: {fileID: 0}
   damageImage: {fileID: 0}
   flashSpeed: 0.1
   flashColour: {r: 255, g: 0, b: 0, a: 0.1}
+--- !u!114 &114000013783484722
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010080420630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a45b89a024ac6c46a115e53bdf22b06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parcheminRange: 7
+  coolDown: 8
+  cam: {fileID: 0}
+  parchemin: {fileID: 1000014176693858, guid: 0238260b31788594cacbad6a4ac12ffe, type: 2}
+  bomb: {fileID: 0}
 --- !u!198 &198000010939624182
 ParticleSystem:
   m_ObjectHideFlags: 1

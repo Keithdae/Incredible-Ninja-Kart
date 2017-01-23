@@ -7,9 +7,9 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Material.001
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
+  m_Shader: {fileID: 45, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _EMISSION
+  m_LightmapFlags: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
   m_SavedProperties:
@@ -69,6 +69,12 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - first:
+        name: _SpecGlossMap
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
     - first:
         name: _BumpScale
@@ -121,7 +127,10 @@ Material:
     m_Colors:
     - first:
         name: _Color
-      second: {r: 0.49214, g: 0.49214, b: 0.49214, a: 1}
+      second: {r: 0.86764705, g: 0.83385634, b: 0.56141865, a: 1}
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
+    - first:
+        name: _SpecColor
+      second: {r: 0.6133934, g: 0.64705884, b: 0.5185986, a: 1}
