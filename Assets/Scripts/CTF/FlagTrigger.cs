@@ -52,6 +52,7 @@ public class FlagTrigger : MonoBehaviour {
     public void backToBase()
     {
         enableCollider();
+        holder = null;
         transform.position = startingPos;
         transform.parent = startParent;
     }
@@ -59,5 +60,15 @@ public class FlagTrigger : MonoBehaviour {
     private int opponentLayer()
     {
         return (gameObject.layer == 10) ? 9 : 8;
+    }
+
+    public bool isHeld()
+    {
+        return holder != null;
+    }
+
+    public bool isAtStart()
+    {
+        return transform.position == startingPos;
     }
 }

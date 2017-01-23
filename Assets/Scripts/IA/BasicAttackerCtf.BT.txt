@@ -5,17 +5,48 @@ tree("Root")
 				sequence
 					checkForEnemies
 					fallback
-						tree "Attack"
-						tree "Explore"
+						tree "Priority"
+						tree "FlagPickup"
+						tree "Combat"
+						tree "Help"
+						tree "Objective"
 
+tree "Priority"
+	while hasFlag
+		sequence
+			GoBackToBase
+			while hasEnemyInSight
+				sequence
+					CallForHelp
+					ShootEnemy
 
-
-tree "Attack"
+tree "FlagPickup"
+	while teamFlagPickable
+		sequence
+			GoToTeamFlag
+			while hasEnemyInSight
+				sequence
+					CallForHelp
+					ShootEnemy
+	
+tree "Combat"
 	while hasEnemyInSight
 		sequence
-			ShootEnemy
+			fallback
+				
+				ShootEnemy
 			FollowEnemy
 	
 	
-tree "Explore"
-	Explore
+tree "Help"
+	while hasAllyInNeed
+		sequence
+			GoToHelp
+			while hasEnemyInSight
+				ShootEnemy
+	
+tree "Objective"
+	fallback
+		while enemyFlagInSight
+			GoToEnemyFlag
+		Explore

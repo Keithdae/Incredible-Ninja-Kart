@@ -13,6 +13,10 @@ public class CaptureTheFlag : MonoBehaviour {
     public Transform[] spawnPointsTeam2;
     public List<Transform> wpBaseTeam1;
     public List<Transform> wpBaseTeam2;
+    public Transform flagAreaTeam1;
+    public Transform flagAreaTeam2;
+    public GameObject flagTeam1;
+    public GameObject flagTeam2;
     public Canvas playerCanvas;
     public float spawnDelay;
     public int dureePartie;
@@ -69,6 +73,10 @@ public class CaptureTheFlag : MonoBehaviour {
             team1[i].spawnPoints = spawnPointsTeam1;
             team1[i].wpAlly = wpBaseTeam1;
             team1[i].wpEnemy = wpBaseTeam2;
+            team1[i].flagAreaAlly = flagAreaTeam1;
+            team1[i].flagAraEnemy = flagAreaTeam2;
+            team1[i].flagAlly = flagTeam1;
+            team1[i].flagEnemy = flagTeam2;
             team1[i].Setup();
             team1[i].setSpawnDelay(spawnDelay);
 
@@ -77,6 +85,10 @@ public class CaptureTheFlag : MonoBehaviour {
             team2[i].spawnPoints = spawnPointsTeam2;
             team2[i].wpAlly = wpBaseTeam2;
             team2[i].wpEnemy = wpBaseTeam1;
+            team2[i].flagAreaAlly = flagAreaTeam2;
+            team2[i].flagAraEnemy = flagAreaTeam1;
+            team2[i].flagAlly = flagTeam2;
+            team2[i].flagEnemy = flagTeam1;
             team2[i].Setup();
             team2[i].setSpawnDelay(spawnDelay);
             if (i != 0)

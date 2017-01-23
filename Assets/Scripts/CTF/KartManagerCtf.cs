@@ -10,6 +10,10 @@ public class KartManagerCtf
     public Transform[] spawnPoints;
     public List<Transform> wpAlly;
     public List<Transform> wpEnemy;
+    public Transform flagAreaAlly;
+    public Transform flagAraEnemy;
+    public GameObject flagAlly;
+    public GameObject flagEnemy;
     [HideInInspector]
     public GameObject instance;
     [HideInInspector]
@@ -79,5 +83,9 @@ public class KartManagerCtf
         healthComponent.spawnPoints = spawnPoints;
         movementIA.wpAllies = wpAlly;
         movementIA.wpEnemies = wpEnemy;
+        movementIA.flagAreaAlly = flagAreaAlly;
+        movementIA.flagAreaEnemy = flagAraEnemy;
+        movementIA.flagAlly = flagAlly;
+        movementIA.flagEnemy = flagEnemy;
     }
 }

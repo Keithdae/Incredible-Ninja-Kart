@@ -42,6 +42,7 @@ GameObject:
   - 114: {fileID: 114000013355696022}
   - 114: {fileID: 114000010091282702}
   - 114: {fileID: 114000010587130964}
+  - 114: {fileID: 114000013761589670}
   m_Layer: 8
   m_Name: KartTest Ally CTF
   m_TagString: IA
@@ -4363,6 +4364,7 @@ MonoBehaviour:
   exploRange: 20
   sightRange: 50
   randExplo: 0
+  flagArea: {fileID: 0}
   wpAllies: []
   wpEnemies: []
 --- !u!114 &114000011321232710
@@ -4431,7 +4433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scripts:
-  - {fileID: 4900000, guid: f40eb1a8525d61945a70ce7932f86b37, type: 3}
+  - {fileID: 4900000, guid: c7b775a6a7be7a04cb608526c62029f6, type: 3}
   autoReset: 1
   tickOn: 0
   sourceInfos:
@@ -4474,6 +4476,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   accuracy: 20
   shootDelay: 0.56
+--- !u!114 &114000013761589670
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010080420630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 496342da72995c44fab58a5d4cbb91be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  communicationRadius: 100
 --- !u!114 &114000014222914306
 MonoBehaviour:
   m_ObjectHideFlags: 1
