@@ -1,0 +1,59 @@
+tree("Root")
+	repeat
+		while isAliveCtf
+			mute
+				sequence
+					checkForEnemies
+					fallback
+						tree "Priority"
+						tree "FlagPickup"
+						tree "Combat"
+						tree "Help"
+						tree "Objective"
+
+tree "Priority"
+	while hasFlag
+		mute
+			sequence
+				GoBackToBase
+				while hasEnemyInSight
+					sequence
+						CallForHelp
+						ShootEnemy
+
+tree "FlagPickup"
+	while teamFlagPickable
+		mute
+			sequence
+				GoToTeamFlag
+				while hasEnemyInSight
+					sequence
+						CallForHelp
+						ShootEnemy
+	
+tree "Combat"
+	while hasEnemyInSight
+		mute
+			sequence
+				ShootEnemy
+				FollowEnemy
+				while 
+					fallback
+						hasMultipleEnemyInSight
+						lowHealth
+					CallForHelp
+	
+	
+tree "Help"
+	while hasAllyInNeed
+		mute 
+			sequence
+				GoToHelp
+				while hasEnemyInSight
+					ShootEnemy
+	
+tree "Objective"
+	fallback
+		while enemyFlagInSight
+			GoToEnemyFlag
+		Explore

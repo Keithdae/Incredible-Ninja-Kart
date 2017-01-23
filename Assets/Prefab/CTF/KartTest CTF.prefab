@@ -71,8 +71,8 @@ GameObject:
   - 54: {fileID: 54000010054933616}
   - 114: {fileID: 114000010729738512}
   - 114: {fileID: 114000010109262474}
-  - 114: {fileID: 114000011325341370}
   - 114: {fileID: 114000010084651690}
+  - 114: {fileID: 114000012094937306}
   m_Layer: 8
   m_Name: KartTest CTF
   m_TagString: Player
@@ -4166,6 +4166,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae26ffb1d180a654f87ced483a42f2c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flagHeld: {fileID: 0}
+  hasFlag: 0
 --- !u!114 &114000010109262474
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4222,7 +4224,7 @@ MonoBehaviour:
   - {fileID: 1000014062766900}
   - {fileID: 1000010991948924}
   - {fileID: 1000014239139930}
---- !u!114 &114000011325341370
+--- !u!114 &114000012094937306
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -4230,11 +4232,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000010080420630}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 913f3c7d3f932b149b8981a57533bdba, type: 3}
+  m_Script: {fileID: 11500000, guid: e1fae8591a3ec7448820bedca50288fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 100
-  currentHealth: 100
+  currentHealth: 0
   nbOfDeaths: 0
   dead: 0
   slider: {fileID: 0}
@@ -4243,8 +4245,7 @@ MonoBehaviour:
   fullHealthColor: {r: 0, g: 1, b: 0, a: 1}
   cam: {fileID: 0}
   spawnDelay: 5
-  spawnPoints:
-  - {fileID: 0}
+  spawnPoints: []
   hcv: {fileID: 0}
   rig: {fileID: 0}
   healthText: {fileID: 0}

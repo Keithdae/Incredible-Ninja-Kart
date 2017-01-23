@@ -5,6 +5,8 @@ public class FlagArea : MonoBehaviour {
 
     CaptureTheFlag manager;
 
+    public int layerTeam = 2;
+
     // Use this for initialization
     void Start () {
         manager = GameObject.FindObjectOfType<CaptureTheFlag>();
@@ -17,7 +19,7 @@ public class FlagArea : MonoBehaviour {
 
     void OnTriggerEnter(Collider other){
         GameObject target = other.gameObject;
-        if (target.layer == gameObject.layer-2)
+        if (target.layer == layerTeam)
         {
             // Score a point, bring flag back home
             FlagHold hold = target.GetComponentInChildren<FlagHold>();
@@ -28,13 +30,10 @@ public class FlagArea : MonoBehaviour {
             }
             if (hold.hasFlag)
             {
-                FlagTrigger flag = target.GetComponentInChildren<FlagTrigger>();
-                while (flag == null)
-                {
-                    target = target.transform.parent.gameObject;
-                    flag = target.GetComponentInChildren<FlagTrigger>();
-                }
+                FlagTrigger flag = hold.flagHeld;
                 flag.backToBase();
+                hold.hasFlag = false;
+                hold.flagHeld = null;
                 manager.CaptureFlag(target.layer);
             }
         }

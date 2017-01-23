@@ -11,32 +11,59 @@ public class MoveHandler : MonoBehaviour {
 
     public bool randExplo = false;
 
+    [HideInInspector]
+    public Transform flagAreaAlly;
+    [HideInInspector]
+    public Transform flagAreaEnemy;
+
+    //[HideInInspector]
+    public GameObject flagAlly;
+    private FlagTrigger flagAllyTrigger;
+    //[HideInInspector]
+    public GameObject flagEnemy;
+
+
+    [HideInInspector]
     public List<Transform> wpAllies;
+    [HideInInspector]
     public List<Transform> wpEnemies;
 
+    private List<GameObject> allies;
     private List<GameObject> enemies;
     private List<GameObject> enemiesInSight;
     private int enemyLayer;
+
+    private FlagHold hold;
+
+    private KartHealthIaCtf healthComp;
 
     private int currentWP = 0;
 
     // Use this for initialization
     void Start () {
+        allies = new List<GameObject>();
         enemies = new List<GameObject>();
         enemiesInSight = new List<GameObject>();
         navAgent = GetComponent<NavMeshAgent>();
+        hold = GetComponent<FlagHold>();
+        flagAllyTrigger = flagAlly.GetComponent<FlagTrigger>();
+        healthComp = GetComponent<KartHealthIaCtf>();
         enemyLayer = opponentLayer();
         GameObject[] gos = GameObject.FindObjectsOfType(typeof(GameObject)) as GameObject[];
         foreach(GameObject go in gos)
         {
-            if(go.layer == enemyLayer)
+            if(go.layer == enemyLayer && !go.CompareTag("Untagged"))
             {
                 enemies.Add(go);
+            }
+            if (go != gameObject && go.layer == gameObject.layer && !go.CompareTag("Untagged"))
+            {
+                allies.Add(go);
             }
         } 
     }
 
-    // Tasks for PandaBT
+    // Tasks for PandaBT ---------------------------
     [Task]
     void Explore()
     {
@@ -108,12 +135,93 @@ public class MoveHandler : MonoBehaviour {
     }
 
     [Task]
+    void GoBackToBase()
+    {
+        navAgent.SetDestination(flagAreaAlly.position);
+        Task.current.Succeed();
+    }
+
+    [Task]
     void hasEnemyInSight()
     {
         Task.current.Complete(enemiesInSight.Count>0);
     }
+
+    [Task]
+    void hasMultipleEnemyInSight()
+    {
+        Task.current.Complete(enemiesInSight.Count>1);
+    }
+
+    [Task]
+    void hasFlag()
+    {
+        Task.current.Complete(hold.hasFlag);
+    }
+
+    [Task]
+    void enemyFlagInSight()
+    {
+        Task.current.Complete(checkForEnemyFlag());
+    }
+
+    bool checkForEnemyFlag()
+    {
+        bool res = false;
+        Vector3 dir = flagEnemy.transform.position - transform.position;
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, dir, out hit, sightRange))
+        {
+            if (hit.transform.gameObject.layer == flagEnemy.layer && hit.transform.gameObject.CompareTag(flagEnemy.tag))
+                res = true;
+        }
+        return res;
+    }
+
+    [Task]
+    void GoToEnemyFlag()
+    {
+        moveTo(flagEnemy.transform.position);
+        Task.current.Succeed();
+    }
+
+    [Task]
+    void teamFlagPickable()
+    {
+        Task.current.Complete(checkForAllyFlag());
+    }
+
+    bool checkForAllyFlag()
+    {
+        // Le flag ne doit pas etre porte, ni a sa position de depart, et egalement etre en vue
+        bool res = !flagAllyTrigger.isHeld() && !flagAllyTrigger.isAtStart();
+        if (res)
+        {
+            Vector3 dir = flagAlly.transform.position - transform.position;
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, dir, out hit, sightRange))
+            {
+                if (!(hit.transform.gameObject.layer == flagAlly.layer && hit.transform.gameObject.CompareTag(flagAlly.tag)))
+                    res = false;
+            }
+        }
+        return res;
+    }
+
+    [Task]
+    void GoToTeamFlag()
+    {
+        moveTo(flagAlly.transform.position);
+        Task.current.Succeed();
+    }
+
+    [Task]
+    void lowHealth()
+    {
+        Task.current.Complete(healthComp.currentHealth < (healthComp.startingHealth / 2.0f));
+    }
         
-    // Utility functions
+    // Utility functions ---------------------------
     private bool RandomPoint(Vector3 center, float range, out Vector3 result) {
         for (int i = 0; i < 30; i++) {
             Vector3 randomPoint = center + Random.insideUnitSphere * range;
@@ -127,6 +235,11 @@ public class MoveHandler : MonoBehaviour {
         return false;
     }
 
+    public void moveTo(Vector3 pos)
+    {
+        navAgent.SetDestination(pos);
+    }
+
     private bool DestReached()
     {
         return (Vector3.Distance(transform.position, navAgent.destination) <= navAgent.stoppingDistance * 2.0f) /*&& (!navAgent.hasPath || navAgent.velocity.sqrMagnitude == 0f)*/;
@@ -138,6 +251,10 @@ public class MoveHandler : MonoBehaviour {
         return (gameObject.layer == 8) ? 9 : 8;
     }
 
+
+    public List<GameObject> GetAllies(){
+        return allies;
+    }
 
     public List<GameObject> GetEnemies(){
         return enemies;
